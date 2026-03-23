@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Cornelius Capital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black:  #090d09;
+  --black2: #0b100b;
+  --black3: #0d120d;
+  --green:  #3d6b4a;
+  --white:  #eae6de;
+  --muted:  rgba(234, 230, 222, 0.48);
+  --line:   rgba(234, 230, 222, 0.07);
+  --input-bg: rgba(234, 230, 222, 0.04);
+  --input-border: rgba(234, 230, 222, 0.12);
+  --input-focus: rgba(234, 230, 222, 0.25);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--black);
+  color: var(--white);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 5rem;
+  border-bottom: 0.5px solid var(--line);
+  background: var(--black);
+}
+
+.logo {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.logo em { font-style: italic; }
+
+.back {
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(234,230,222,0.35);
+  text-decoration: none;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s;
+}
+
+.back:hover { color: var(--white); }
+
+.page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 73px);
+}
+
+.left {
+  padding: 7rem 5rem;
+  background: var(--black2);
+  border-right: 0.5px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.page-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(234,230,222,0.2);
+  margin-bottom: 1.5rem;
+}
+
+.page-h1 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--white);
+  margin-bottom: 2rem;
+}
+
+.page-h1 em { font-style: italic; }
+
+.page-sub {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.85;
+  max-width: 360px;
+  font-weight: 300;
+}
+
+.left-bottom { margin-top: 4rem; }
+
+.left-detail {
+  font-size: 0.72rem;
+  color: rgba(234,230,222,0.2);
+  letter-spacing: 0.1em;
+  line-height: 2.2;
+}
+
+.right {
+  padding: 7rem 5rem;
+  background: var(--black3);
+}
+
+.form-label-top {
+  font-size: 0.6rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(234,230,222,0.2);
+  margin-bottom: 3rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+label {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(234,230,222,0.32);
+  font-weight: 500;
+}
+
+input, select, textarea {
+  background: var(--input-bg);
+  border: 0.5px solid var(--input-border);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  padding: 0.9rem 1rem;
+  outline: none;
+  border-radius: 0;
+  transition: border-color 0.2s, background 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+}
+
+input::placeholder, textarea::placeholder { color: rgba(234,230,222,0.2); }
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--input-focus);
+  background: rgba(234,230,222,0.06);
+}
+
+select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(234,230,222,0.3)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+select option { background: #0d120d; color: var(--white); }
+
+textarea { resize: vertical; min-height: 100px; line-height: 1.7; }
+
+.submit-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  padding-top: 2rem;
+  border-top: 0.5px solid var(--line);
+}
+
+.submit-note {
+  font-size: 0.7rem;
+  color: rgba(234,230,222,0.18);
+  font-weight: 300;
+  max-width: 220px;
+  line-height: 1.6;
+}
+
+button[type="submit"] {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--black);
+  background: var(--white);
+  border: none;
+  padding: 0.95rem 2.2rem;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+button[type="submit"]:hover { opacity: 0.85; transform: translateX(3px); }
+
+footer {
+  padding: 1.6rem 5rem;
+  border-top: 0.5px solid var(--line);
+  background: var(--black);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.foot-logo {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(234,230,222,0.13);
+  font-weight: 400;
+}
+
+.foot-logo em { font-style: italic; }
+
+.foot-copy { font-size: 0.6rem; color: rgba(234,230,222,0.1); letter-spacing: 0.08em; }
+
+@media (max-width: 860px) {
+  nav { padding: 1.6rem 2rem; }
+  .page { grid-template-columns: 1fr; }
+  .left { padding: 4rem 2rem; border-right: none; border-bottom: 0.5px solid var(--line); }
+  .right { padding: 4rem 2rem; }
+  .field-row { grid-template-columns: 1fr; }
+  .submit-row { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  footer { padding: 1.6rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Cornelius &amp; Capital</a>
+  <a href="index.html" class="back">&#8592; Back</a>
+</nav>
+
+<div class="page">
+
+  <div class="left">
+    <div class="left-top">
+      <div class="page-label">Contact</div>
+      <h1 class="page-h1">Start a<br><em>conversation.</em></h1>
+      <p class="page-sub">Whether you are an investor, a founder or a sports property — we would like to hear from you.</p>
+    </div>
+    <div class="left-bottom">
+      <div class="left-detail">
+        hello@corneliuscapital.com<br>
+        London, United Kingdom
+      </div>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="form-label-top">Your details</div>
+    <form id="contact-form" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+
+      <div class="field-row">
+        <div class="field">
+          <label for="firstname">First name</label>
+          <input type="text" id="firstname" name="firstname" placeholder="James" autocomplete="given-name">
+        </div>
+        <div class="field">
+          <label for="lastname">Last name</label>
+          <input type="text" id="lastname" name="lastname" placeholder="Smith" autocomplete="family-name">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" placeholder="james@company.com" autocomplete="email">
+      </div>
+
+      <div class="field">
+        <label for="company">Company</label>
+        <input type="text" id="company" name="company" placeholder="Company name" autocomplete="organization">
+      </div>
+
+      <div class="field">
+        <label for="contact_type">I am a</label>
+        <select id="contact_type" name="contact_type">
+          <option value="" disabled selected>Select one</option>
+          <option value="investor_pe_vc">PE / VC Fund</option>
+          <option value="investor_family_office">Family Office</option>
+          <option value="investor_hnw">High Net Worth Investor</option>
+          <option value="founder_sports_tech">Sports Technology Founder</option>
+          <option value="sports_property">Sports Property / Rights Holder</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="area_of_interest">Area of interest</label>
+        <select id="area_of_interest" name="area_of_interest">
+          <option value="" disabled selected>Select one</option>
+          <option value="deal_flow">Deal flow &amp; investment opportunities</option>
+          <option value="capital_raise">Raising capital</option>
+          <option value="advisory">Strategic advisory</option>
+          <option value="capital_for_sport">Capital for a sports property</option>
+          <option value="general">General enquiry</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="message">Anything else</label>
+        <textarea id="message" name="message" placeholder="Optional — add any context that would be helpful."></textarea>
+      </div>
+
+      <div class="submit-row">
+        <div class="submit-note">We will be in touch shortly. All enquiries are treated in confidence.</div>
+        <button type="submit">Send &#8594;</button>
+      </div>
+
+    </form>
+  </div>
+
+</div>
+
+<footer>
+  <div class="foot-logo">Cornelius &amp; Capital</div>
+  <div class="foot-copy">&#169; 2025 Cornelius Capital Ltd.</div>
+</footer>
+
+</body>
+</html>
