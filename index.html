@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cornelius Capital</title>
-<meta name="description" content="A London-based advisory firm at the intersection of sport and capital.">
+<title>Mayfair Sports Capital</title>
+<meta name="description" content="A London-based investment and advisory firm at the intersection of sport and capital.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -31,6 +31,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ── NAV ── */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0; z-index: 100;
@@ -78,6 +79,7 @@ nav.scrolled {
 
 .nav-links a:hover { color: var(--white); }
 
+/* ── HERO ── */
 .hero {
   position: relative;
   height: 100vh;
@@ -108,7 +110,14 @@ nav.scrolled {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(9,13,9,0.0) 0%, rgba(9,13,9,0.0) 28%, rgba(9,13,9,0.7) 68%, rgba(9,13,9,0.98) 90%, rgba(9,13,9,1.0) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(9,13,9,0.0)  0%,
+    rgba(9,13,9,0.0)  28%,
+    rgba(9,13,9,0.7)  68%,
+    rgba(9,13,9,0.98) 90%,
+    rgba(9,13,9,1.0)  100%
+  );
 }
 
 .hero-text {
@@ -141,6 +150,7 @@ nav.scrolled {
   animation: up 1s 0.38s forwards;
 }
 
+/* ── ABOUT ── */
 .about {
   padding: 8rem 5rem;
   background: var(--black2);
@@ -151,6 +161,7 @@ nav.scrolled {
   align-items: start;
 }
 
+/* ── ADVANTAGE ── */
 .advantage {
   padding: 8rem 5rem;
   background: var(--black3);
@@ -170,6 +181,7 @@ nav.scrolled {
   padding-top: 0.4rem;
 }
 
+/* ── ABOUT CONTENT ── */
 .about-h2 {
   font-family: 'Libre Baskerville', serif;
   font-size: clamp(1.2rem, 2.2vw, 1.6rem);
@@ -180,6 +192,7 @@ nav.scrolled {
 
 .about-h2 em { font-style: italic; }
 
+/* ── PILLARS ── */
 .pillars {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -214,6 +227,7 @@ nav.scrolled {
   font-weight: 300;
 }
 
+/* ── CONTACT ── */
 .contact {
   padding: 8rem 5rem;
   background: var(--black2);
@@ -265,6 +279,7 @@ nav.scrolled {
   line-height: 2.2;
 }
 
+/* ── FOOTER ── */
 footer {
   padding: 1.6rem 5rem;
   border-top: 0.5px solid var(--line);
@@ -291,11 +306,13 @@ footer {
   letter-spacing: 0.08em;
 }
 
+/* ── ANIMATION ── */
 @keyframes up {
   from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* ── RESPONSIVE ── */
 @media (max-width: 860px) {
   nav { padding: 1.6rem 2rem; }
   .hero-text { padding: 0 2rem 5rem; }
@@ -313,7 +330,7 @@ footer {
 <body>
 
 <nav id="nav">
-  <a href="index.html" class="logo">Cornelius &amp; Capital</a>
+  <a href="index.html" class="logo">Mayfair <em>Sports</em> Capital</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#focus">Focus</a></li>
@@ -321,14 +338,16 @@ footer {
   </ul>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
   <div class="hero-img"></div>
   <div class="hero-text">
     <h1 class="hero-h1">Capital meets <em>sports.</em></h1>
-    <p class="hero-sub">Cornelius Capital is a London-based investment and advisory firm at the intersection of sports, technology and capital.</p>
+    <p class="hero-sub">Mayfair Sports Capital is a London-based investment and advisory firm at the intersection of sports, technology and capital.</p>
   </div>
 </div>
 
+<!-- ABOUT -->
 <section class="about" id="about">
   <div class="sec-label">About</div>
   <div>
@@ -336,6 +355,7 @@ footer {
   </div>
 </section>
 
+<!-- ADVANTAGE -->
 <section class="advantage" id="focus">
   <div class="sec-label">Our Advantage</div>
   <div class="pillars">
@@ -354,19 +374,20 @@ footer {
   </div>
 </section>
 
+<!-- CONTACT -->
 <section class="contact" id="contact">
   <div>
     <div class="contact-lbl">Get in touch</div>
     <a href="contact.html" class="contact-link">
-      Start a conversation <span class="arr">&#8594;</span>
+      Start a conversation <span class="arr">→</span>
     </a>
   </div>
   <div class="contact-loc">London<br>United Kingdom</div>
 </section>
 
 <footer>
-  <div class="foot-logo">Cornelius &amp; Capital</div>
-  <div class="foot-copy">&#169; 2025 Cornelius Capital Ltd.</div>
+  <div class="foot-logo">Mayfair <em>Sports</em> Capital</div>
+  <div class="foot-copy">&copy; 2026 Mayfair Sports Capital Ltd.</div>
 </footer>
 
 <script>
