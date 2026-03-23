@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Cornelius Capital</title>
+<title>Contact — Mayfair Sports Capital</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -34,6 +34,7 @@ body {
   min-height: 100vh;
 }
 
+/* ── NAV ── */
 nav {
   display: flex;
   justify-content: space-between;
@@ -70,12 +71,14 @@ nav {
 
 .back:hover { color: var(--white); }
 
+/* ── PAGE ── */
 .page {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: calc(100vh - 73px);
 }
 
+/* ── LEFT ── */
 .left {
   padding: 7rem 5rem;
   background: var(--black2);
@@ -84,6 +87,8 @@ nav {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.left-top {}
 
 .page-label {
   font-size: 0.6rem;
@@ -112,7 +117,9 @@ nav {
   font-weight: 300;
 }
 
-.left-bottom { margin-top: 4rem; }
+.left-bottom {
+  margin-top: 4rem;
+}
 
 .left-detail {
   font-size: 0.72rem;
@@ -121,6 +128,7 @@ nav {
   line-height: 2.2;
 }
 
+/* ── RIGHT / FORM ── */
 .right {
   padding: 7rem 5rem;
   background: var(--black3);
@@ -160,7 +168,9 @@ label {
   font-weight: 500;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   background: var(--input-bg);
   border: 0.5px solid var(--input-border);
   color: var(--white);
@@ -176,9 +186,14 @@ input, select, textarea {
   width: 100%;
 }
 
-input::placeholder, textarea::placeholder { color: rgba(234,230,222,0.2); }
+input::placeholder,
+textarea::placeholder {
+  color: rgba(234,230,222,0.2);
+}
 
-input:focus, select:focus, textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
   border-color: var(--input-focus);
   background: rgba(234,230,222,0.06);
 }
@@ -191,10 +206,18 @@ select {
   padding-right: 2.5rem;
 }
 
-select option { background: #0d120d; color: var(--white); }
+select option {
+  background: #0d120d;
+  color: var(--white);
+}
 
-textarea { resize: vertical; min-height: 100px; line-height: 1.7; }
+textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.7;
+}
 
+/* Submit */
 .submit-row {
   display: flex;
   align-items: center;
@@ -229,8 +252,12 @@ button[type="submit"] {
   gap: 0.6rem;
 }
 
-button[type="submit"]:hover { opacity: 0.85; transform: translateX(3px); }
+button[type="submit"]:hover {
+  opacity: 0.85;
+  transform: translateX(3px);
+}
 
+/* ── FOOTER ── */
 footer {
   padding: 1.6rem 5rem;
   border-top: 0.5px solid var(--line);
@@ -251,8 +278,13 @@ footer {
 
 .foot-logo em { font-style: italic; }
 
-.foot-copy { font-size: 0.6rem; color: rgba(234,230,222,0.1); letter-spacing: 0.08em; }
+.foot-copy {
+  font-size: 0.6rem;
+  color: rgba(234,230,222,0.1);
+  letter-spacing: 0.08em;
+}
 
+/* ── RESPONSIVE ── */
 @media (max-width: 860px) {
   nav { padding: 1.6rem 2rem; }
   .page { grid-template-columns: 1fr; }
@@ -268,29 +300,43 @@ footer {
 <body>
 
 <nav>
-  <a href="index.html" class="logo">Cornelius &amp; Capital</a>
-  <a href="index.html" class="back">&#8592; Back</a>
+  <a href="index.html" class="logo">Mayfair <em>Sports</em> Capital</a>
+  <a href="index.html" class="back">&larr; Back</a>
 </nav>
 
 <div class="page">
 
+  <!-- LEFT -->
   <div class="left">
     <div class="left-top">
       <div class="page-label">Contact</div>
       <h1 class="page-h1">Start a<br><em>conversation.</em></h1>
-      <p class="page-sub">Whether you are an investor, a founder or a sports property — we would like to hear from you.</p>
+      <p class="page-sub">We work with a select group of investors, founders and sports properties. If you believe there is a fit, we want to hear from you.</p>
     </div>
     <div class="left-bottom">
       <div class="left-detail">
-        hello@corneliuscapital.com<br>
+        hello@mayfairsportscapital.co.uk<br>
         London, United Kingdom
       </div>
     </div>
   </div>
 
+  <!-- RIGHT / FORM -->
   <div class="right">
     <div class="form-label-top">Your details</div>
-    <form id="contact-form" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+
+    <!--
+      HUBSPOT INTEGRATION NOTE:
+      Replace this form with your HubSpot embed code, or map each
+      field name="" attribute to your HubSpot form field IDs.
+      The dropdown values below align with standard HubSpot contact
+      properties — adjust to match your custom properties.
+    -->
+    <form
+      id="contact-form"
+      method="POST"
+      action="https://formspree.io/f/YOUR_FORM_ID"
+    >
 
       <div class="field-row">
         <div class="field">
@@ -313,6 +359,7 @@ footer {
         <input type="text" id="company" name="company" placeholder="Company name" autocomplete="organization">
       </div>
 
+      <!-- HubSpot: map to contact property "contact_type" or similar -->
       <div class="field">
         <label for="contact_type">I am a</label>
         <select id="contact_type" name="contact_type">
@@ -326,18 +373,7 @@ footer {
         </select>
       </div>
 
-      <div class="field">
-        <label for="area_of_interest">Area of interest</label>
-        <select id="area_of_interest" name="area_of_interest">
-          <option value="" disabled selected>Select one</option>
-          <option value="deal_flow">Deal flow &amp; investment opportunities</option>
-          <option value="capital_raise">Raising capital</option>
-          <option value="advisory">Strategic advisory</option>
-          <option value="capital_for_sport">Capital for a sports property</option>
-          <option value="general">General enquiry</option>
-        </select>
-      </div>
-
+      <!-- HubSpot: map to "message" or "notes" -->
       <div class="field">
         <label for="message">Anything else</label>
         <textarea id="message" name="message" placeholder="Optional — add any context that would be helpful."></textarea>
@@ -345,7 +381,7 @@ footer {
 
       <div class="submit-row">
         <div class="submit-note">We will be in touch shortly. All enquiries are treated in confidence.</div>
-        <button type="submit">Send &#8594;</button>
+        <button type="submit">Send &rarr;</button>
       </div>
 
     </form>
@@ -354,8 +390,8 @@ footer {
 </div>
 
 <footer>
-  <div class="foot-logo">Cornelius &amp; Capital</div>
-  <div class="foot-copy">&#169; 2025 Cornelius Capital Ltd.</div>
+  <div class="foot-logo">Mayfair <em>Sports</em> Capital</div>
+  <div class="foot-copy">&copy; 2026 Mayfair Sports Capital Ltd.</div>
 </footer>
 
 </body>
