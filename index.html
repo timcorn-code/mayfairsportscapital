@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cornelius Capital</title>
+<meta name="description" content="A London-based advisory firm at the intersection of sport and capital.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black:  #090d09;
+  --black2: #0b100b;
+  --black3: #0d120d;
+  --green:  #3d6b4a;
+  --white:  #eae6de;
+  --muted:  rgba(234, 230, 222, 0.52);
+  --line:   rgba(234, 230, 222, 0.07);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--black);
+  color: var(--white);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0; z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 5rem;
+  transition: background 0.5s, border-color 0.5s;
+  border-bottom: 0.5px solid transparent;
+}
+
+nav.scrolled {
+  background: rgba(9, 13, 9, 0.97);
+  border-bottom-color: var(--line);
+  backdrop-filter: blur(12px);
+}
+
+.logo {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.logo em { font-style: italic; }
+
+.nav-links {
+  display: flex;
+  gap: 2.8rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(234, 230, 222, 0.38);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.25s;
+}
+
+.nav-links a:hover { color: var(--white); }
+
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 640px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.hero-img {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=2000&q=90&auto=format&fit=crop&crop=center');
+  background-size: cover;
+  background-position: center 40%;
+  filter: brightness(0.38) saturate(0.65);
+}
+
+.hero-img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 18, 8, 0.5);
+  mix-blend-mode: multiply;
+}
+
+.hero-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(9,13,9,0.0) 0%, rgba(9,13,9,0.0) 28%, rgba(9,13,9,0.7) 68%, rgba(9,13,9,0.98) 90%, rgba(9,13,9,1.0) 100%);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  padding: 0 5rem 7rem;
+  max-width: 740px;
+}
+
+.hero-h1 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.18;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: up 1s 0.2s forwards;
+}
+
+.hero-h1 em { font-style: italic; }
+
+.hero-sub {
+  font-size: 1rem;
+  color: rgba(234,230,222,0.5);
+  line-height: 1.85;
+  max-width: 480px;
+  font-weight: 300;
+  opacity: 0;
+  animation: up 1s 0.38s forwards;
+}
+
+.about {
+  padding: 8rem 5rem;
+  background: var(--black2);
+  border-top: 0.5px solid var(--line);
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.advantage {
+  padding: 8rem 5rem;
+  background: var(--black3);
+  border-top: 0.5px solid var(--line);
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.sec-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(234,230,222,0.2);
+  font-weight: 500;
+  padding-top: 0.4rem;
+}
+
+.about-h2 {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--white);
+}
+
+.about-h2 em { font-style: italic; }
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.pillar {
+  padding-right: 3rem;
+  border-right: 0.5px solid var(--line);
+  margin-right: 3rem;
+}
+
+.pillar:last-child {
+  padding-right: 0;
+  margin-right: 0;
+  border-right: none;
+}
+
+.pillar-t {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+.pillar-b {
+  font-size: 0.88rem;
+  color: rgba(234, 230, 222, 0.62);
+  line-height: 1.82;
+  font-weight: 300;
+}
+
+.contact {
+  padding: 8rem 5rem;
+  background: var(--black2);
+  border-top: 0.5px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.contact-lbl {
+  font-size: 0.6rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(234,230,222,0.2);
+  margin-bottom: 1rem;
+}
+
+.contact-link {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--white);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  transition: opacity 0.2s;
+}
+
+.contact-link:hover { opacity: 0.65; }
+
+.contact-link .arr {
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-size: 1.2rem;
+  font-weight: 300;
+  transition: transform 0.25s;
+}
+
+.contact-link:hover .arr { transform: translateX(5px); }
+
+.contact-loc {
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(234,230,222,0.15);
+  text-align: right;
+  line-height: 2.2;
+}
+
+footer {
+  padding: 1.6rem 5rem;
+  border-top: 0.5px solid var(--line);
+  background: var(--black);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.foot-logo {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(234,230,222,0.13);
+  font-weight: 400;
+}
+
+.foot-logo em { font-style: italic; }
+
+.foot-copy {
+  font-size: 0.6rem;
+  color: rgba(234,230,222,0.1);
+  letter-spacing: 0.08em;
+}
+
+@keyframes up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 860px) {
+  nav { padding: 1.6rem 2rem; }
+  .hero-text { padding: 0 2rem 5rem; }
+  .about, .advantage { padding: 5rem 2rem; grid-template-columns: 1fr; gap: 1.5rem; }
+  .pillars { grid-template-columns: 1fr; gap: 2.5rem; }
+  .pillar { border-right: none; padding-right: 0; margin-right: 0; padding-bottom: 2rem; border-bottom: 0.5px solid var(--line); }
+  .pillar:last-child { border-bottom: none; padding-bottom: 0; }
+  .contact { padding: 5rem 2rem; flex-direction: column; align-items: flex-start; gap: 2rem; }
+  .contact-loc { text-align: left; }
+  footer { padding: 1.6rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="logo">Cornelius &amp; Capital</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#focus">Focus</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-text">
+    <h1 class="hero-h1">Capital meets <em>sports.</em></h1>
+    <p class="hero-sub">Cornelius Capital is a London-based investment and advisory firm at the intersection of sports, technology and capital.</p>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="sec-label">About</div>
+  <div>
+    <h2 class="about-h2">We unlock long-term investment value through our insight, sector expertise and <em>access to off-market opportunities.</em></h2>
+  </div>
+</section>
+
+<section class="advantage" id="focus">
+  <div class="sec-label">Our Advantage</div>
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-t">Access</div>
+      <div class="pillar-b">Proprietary, off-market opportunities in sports technology — sourced before they reach the broader market.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-t">Insight</div>
+      <div class="pillar-b">Built from both sides of the sports commercial table. We understand how capital values sport, and how sport thinks about capital.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-t">Execution</div>
+      <div class="pillar-b">We run every process from origination through transaction. Our interests are fully aligned with yours.</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div>
+    <div class="contact-lbl">Get in touch</div>
+    <a href="contact.html" class="contact-link">
+      Start a conversation <span class="arr">&#8594;</span>
+    </a>
+  </div>
+  <div class="contact-loc">London<br>United Kingdom</div>
+</section>
+
+<footer>
+  <div class="foot-logo">Cornelius &amp; Capital</div>
+  <div class="foot-copy">&#169; 2025 Cornelius Capital Ltd.</div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  }, { passive: true });
+</script>
+
+</body>
+</html>
