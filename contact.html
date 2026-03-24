@@ -1,398 +1,564 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Mayfair Sports Capital</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact â Mayfair Sports Capital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <!-- HubSpot Tracking Code (EU1) -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/148089624.js"></script>
 
-:root {
-  --black:  #090d09;
-  --black2: #0b100b;
-  --black3: #0d120d;
-  --green:  #3d6b4a;
-  --white:  #eae6de;
-  --muted:  rgba(234, 230, 222, 0.48);
-  --line:   rgba(234, 230, 222, 0.07);
-  --input-bg: rgba(234, 230, 222, 0.04);
-  --input-border: rgba(234, 230, 222, 0.12);
-  --input-focus: rgba(234, 230, 222, 0.25);
-}
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+    :root {
+      --black:   #090d09;
+      --black2:  #0b100b;
+      --black3:  #0d120d;
+      --green:   #3d6b4a;
+      --white:   #eae6de;
+      --muted:   rgba(234, 230, 222, 0.52);
+      --line:    rgba(234, 230, 222, 0.07);
+      --input-bg:     rgba(234, 230, 222, 0.04);
+      --input-border: rgba(234, 230, 222, 0.12);
+      --input-focus:  rgba(234, 230, 222, 0.25);
+    }
 
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--black);
-  color: var(--white);
-  font-weight: 300;
-  -webkit-font-smoothing: antialiased;
-  min-height: 100vh;
-}
+    html { scroll-behavior: smooth; }
 
-/* ── NAV ── */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem 5rem;
-  border-bottom: 0.5px solid var(--line);
-  background: var(--black);
-}
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
 
-.logo {
-  font-family: 'Libre Baskerville', serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 400;
-}
+    /* ââ NAV ââ */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 5rem;
+      border-bottom: 0.5px solid var(--line);
+      background: var(--black);
+    }
 
-.logo em { font-style: italic; }
+    .logo {
+      text-decoration: none;
+      display: flex;
+      align-items: baseline;
+      gap: 0;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
 
-.back {
-  font-size: 0.62rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(234,230,222,0.35);
-  text-decoration: none;
-  font-weight: 400;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: color 0.2s;
-}
+    .logo-mayfair {
+      font-size: 1.35rem;
+      font-weight: 400;
+      color: var(--green);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
 
-.back:hover { color: var(--white); }
+    .logo-sc {
+      font-size: 1.35rem;
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(234, 230, 222, 0.8);
+      letter-spacing: 0.04em;
+    }
 
-/* ── PAGE ── */
-.page {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: calc(100vh - 73px);
-}
+    .back {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(234,230,222,0.35);
+      text-decoration: none;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s;
+    }
+    .back:hover { color: var(--white); }
 
-/* ── LEFT ── */
-.left {
-  padding: 7rem 5rem;
-  background: var(--black2);
-  border-right: 0.5px solid var(--line);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+    /* ââ PAGE ââ */
+    .page {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - 73px);
+    }
 
-.left-top {}
+    /* ââ LEFT ââ */
+    .left {
+      padding: 7rem 5rem;
+      background: var(--black2);
+      border-right: 0.5px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
-.page-label {
-  font-size: 0.6rem;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: rgba(234,230,222,0.2);
-  margin-bottom: 1.5rem;
-}
+    .page-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: rgba(234,230,222,0.2);
+      margin-bottom: 1.5rem;
+    }
 
-.page-h1 {
-  font-family: 'Libre Baskerville', serif;
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-  font-weight: 400;
-  line-height: 1.2;
-  color: var(--white);
-  margin-bottom: 2rem;
-}
+    .page-h1 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--white);
+      margin-bottom: 2rem;
+    }
+    .page-h1 em { font-style: italic; }
 
-.page-h1 em { font-style: italic; }
+    .page-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.85;
+      max-width: 360px;
+      font-weight: 300;
+    }
 
-.page-sub {
-  font-size: 0.9rem;
-  color: var(--muted);
-  line-height: 1.85;
-  max-width: 360px;
-  font-weight: 300;
-}
+    .left-bottom { margin-top: 4rem; }
 
-.left-bottom {
-  margin-top: 4rem;
-}
+    .left-detail {
+      font-size: 0.72rem;
+      color: rgba(234,230,222,0.2);
+      letter-spacing: 0.1em;
+      line-height: 2.2;
+    }
 
-.left-detail {
-  font-size: 0.72rem;
-  color: rgba(234,230,222,0.2);
-  letter-spacing: 0.1em;
-  line-height: 2.2;
-}
+    /* ââ RIGHT / FORM ââ */
+    .right {
+      padding: 7rem 5rem;
+      background: var(--black3);
+    }
 
-/* ── RIGHT / FORM ── */
-.right {
-  padding: 7rem 5rem;
-  background: var(--black3);
-}
+    .form-label-top {
+      font-size: 0.6rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: rgba(234,230,222,0.2);
+      margin-bottom: 3rem;
+    }
 
-.form-label-top {
-  font-size: 0.6rem;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: rgba(234,230,222,0.2);
-  margin-bottom: 3rem;
-}
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
 
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
 
-.field-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-}
+    label {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(234,230,222,0.32);
+      font-weight: 500;
+    }
 
-label {
-  font-size: 0.62rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(234,230,222,0.32);
-  font-weight: 500;
-}
+    input, select, textarea {
+      background: var(--input-bg);
+      border: 0.5px solid var(--input-border);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      padding: 0.9rem 1rem;
+      outline: none;
+      border-radius: 0;
+      transition: border-color 0.2s, background 0.2s;
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+    }
 
-input,
-select,
-textarea {
-  background: var(--input-bg);
-  border: 0.5px solid var(--input-border);
-  color: var(--white);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 300;
-  padding: 0.9rem 1rem;
-  outline: none;
-  border-radius: 0;
-  transition: border-color 0.2s, background 0.2s;
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-}
+    input::placeholder, textarea::placeholder {
+      color: rgba(234,230,222,0.2);
+    }
 
-input::placeholder,
-textarea::placeholder {
-  color: rgba(234,230,222,0.2);
-}
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--input-focus);
+      background: rgba(234,230,222,0.06);
+    }
 
-input:focus,
-select:focus,
-textarea:focus {
-  border-color: var(--input-focus);
-  background: rgba(234,230,222,0.06);
-}
+    select {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(234,230,222,0.3)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
 
-select {
-  cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(234,230,222,0.3)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 1rem center;
-  padding-right: 2.5rem;
-}
+    select option { background: #0d120d; color: var(--white); }
 
-select option {
-  background: #0d120d;
-  color: var(--white);
-}
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+      line-height: 1.7;
+    }
 
-textarea {
-  resize: vertical;
-  min-height: 100px;
-  line-height: 1.7;
-}
+    /* Submit */
+    .submit-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+      padding-top: 2rem;
+      border-top: 0.5px solid var(--line);
+    }
 
-/* Submit */
-.submit-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 0.5rem;
-  padding-top: 2rem;
-  border-top: 0.5px solid var(--line);
-}
+    .submit-note {
+      font-size: 0.7rem;
+      color: rgba(234,230,222,0.18);
+      font-weight: 300;
+      max-width: 220px;
+      line-height: 1.6;
+    }
 
-.submit-note {
-  font-size: 0.7rem;
-  color: rgba(234,230,222,0.18);
-  font-weight: 300;
-  max-width: 220px;
-  line-height: 1.6;
-}
+    button[type="submit"] {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--black);
+      background: var(--white);
+      border: none;
+      padding: 0.95rem 2.2rem;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
 
-button[type="submit"] {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-weight: 500;
-  color: var(--black);
-  background: var(--white);
-  border: none;
-  padding: 0.95rem 2.2rem;
-  cursor: pointer;
-  transition: opacity 0.2s, transform 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
+    button[type="submit"]:hover {
+      opacity: 0.85;
+      transform: translateX(3px);
+    }
 
-button[type="submit"]:hover {
-  opacity: 0.85;
-  transform: translateX(3px);
-}
+    button[type="submit"]:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      transform: none;
+    }
 
-/* ── FOOTER ── */
-footer {
-  padding: 1.6rem 5rem;
-  border-top: 0.5px solid var(--line);
-  background: var(--black);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    /* Status messages */
+    .form-status {
+      display: none;
+      font-size: 0.82rem;
+      font-weight: 300;
+      line-height: 1.5;
+      padding: 0.8rem 1rem;
+      border: 0.5px solid;
+      margin-top: -0.5rem;
+    }
+    .form-status.success {
+      display: block;
+      color: #7ec77b;
+      border-color: rgba(126,199,123,0.2);
+      background: rgba(126,199,123,0.04);
+    }
+    .form-status.error {
+      display: block;
+      color: #e87c6c;
+      border-color: rgba(232,124,108,0.2);
+      background: rgba(232,124,108,0.04);
+    }
 
-.foot-logo {
-  font-family: 'Libre Baskerville', serif;
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(234,230,222,0.13);
-  font-weight: 400;
-}
+    /* ââ FOOTER ââ */
+    footer {
+      padding: 2.4rem 5rem;
+      border-top: 0.5px solid var(--line);
+      background: var(--black);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-.foot-logo em { font-style: italic; }
+    .foot-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.38rem;
+    }
 
-.foot-copy {
-  font-size: 0.6rem;
-  color: rgba(234,230,222,0.1);
-  letter-spacing: 0.08em;
-}
+    .foot-wordmark {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      font-weight: 400;
+      line-height: 1;
+    }
 
-/* ── RESPONSIVE ── */
-@media (max-width: 860px) {
-  nav { padding: 1.6rem 2rem; }
-  .page { grid-template-columns: 1fr; }
-  .left { padding: 4rem 2rem; border-right: none; border-bottom: 0.5px solid var(--line); }
-  .right { padding: 4rem 2rem; }
-  .field-row { grid-template-columns: 1fr; }
-  .submit-row { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
-  footer { padding: 1.6rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
-}
+    .foot-wordmark .wm-main {
+      text-transform: uppercase;
+      color: var(--green);
+      letter-spacing: 0.22em;
+    }
 
-</style>
+    .foot-wordmark .wm-italic {
+      font-style: italic;
+      color: rgba(234,230,222,0.72);
+      letter-spacing: 0.04em;
+    }
+
+    .foot-rule {
+      width: 28px;
+      height: 0.5px;
+      background: var(--green);
+      opacity: 0.5;
+    }
+
+    .foot-tagline {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 0.62rem;
+      font-style: italic;
+      color: rgba(234,230,222,0.22);
+      letter-spacing: 0.04em;
+    }
+
+    .foot-copy {
+      font-size: 0.6rem;
+      color: rgba(234,230,222,0.1);
+      letter-spacing: 0.08em;
+    }
+
+    /* ââ RESPONSIVE ââ */
+    @media (max-width: 860px) {
+      nav { padding: 1.6rem 2rem; }
+      .page { grid-template-columns: 1fr; }
+      .left { padding: 4rem 2rem; border-right: none; border-bottom: 0.5px solid var(--line); }
+      .right { padding: 4rem 2rem; }
+      .field-row { grid-template-columns: 1fr; }
+      .submit-row { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+      footer { padding: 2rem 2rem; flex-direction: column; align-items: flex-start; gap: 1.2rem; }
+      .foot-brand { gap: 0.3rem; }
+    }
+  </style>
 </head>
 <body>
 
-<nav>
-  <a href="index.html" class="logo">Mayfair <em>Sports</em> Capital</a>
-  <a href="index.html" class="back">&larr; Back</a>
-</nav>
+  <nav>
+    <a href="index.html" class="logo"><span class="logo-mayfair">Mayfair</span><span class="logo-sc">&nbsp;Sports Capital</span></a>
+    <a href="index.html" class="back">&larr; Back</a>
+  </nav>
 
-<div class="page">
+  <div class="page">
 
-  <!-- LEFT -->
-  <div class="left">
-    <div class="left-top">
-      <div class="page-label">Contact</div>
-      <h1 class="page-h1">Start a<br><em>conversation.</em></h1>
-      <p class="page-sub">We work with a select group of investors, founders and sports properties. If you believe there is a fit, we want to hear from you.</p>
-    </div>
-    <div class="left-bottom">
-      <div class="left-detail">
-        hello@mayfairsportscapital.co.uk<br>
-        London, United Kingdom
+    <!-- LEFT -->
+    <div class="left">
+      <div class="left-top">
+        <div class="page-label">Contact</div>
+        <h1 class="page-h1">Start a<br><em>conversation.</em></h1>
+        <p class="page-sub">We work with a select group of investors, founders and sports properties. If you believe there is a fit, we want to hear from you.</p>
       </div>
-    </div>
-  </div>
-
-  <!-- RIGHT / FORM -->
-  <div class="right">
-    <div class="form-label-top">Your details</div>
-
-    <!--
-      HUBSPOT INTEGRATION NOTE:
-      Replace this form with your HubSpot embed code, or map each
-      field name="" attribute to your HubSpot form field IDs.
-      The dropdown values below align with standard HubSpot contact
-      properties — adjust to match your custom properties.
-    -->
-    <form
-      id="contact-form"
-      method="POST"
-      action="https://formspree.io/f/YOUR_FORM_ID"
-    >
-
-      <div class="field-row">
-        <div class="field">
-          <label for="firstname">First name</label>
-          <input type="text" id="firstname" name="firstname" placeholder="James" autocomplete="given-name">
-        </div>
-        <div class="field">
-          <label for="lastname">Last name</label>
-          <input type="text" id="lastname" name="lastname" placeholder="Smith" autocomplete="family-name">
+      <div class="left-bottom">
+        <div class="left-detail">
+          hello@mayfairsportscapital.co.uk<br>
+          London, United Kingdom
         </div>
       </div>
+    </div>
 
-      <div class="field">
-        <label for="email">Email address</label>
-        <input type="email" id="email" name="email" placeholder="james@company.com" autocomplete="email">
-      </div>
+    <!-- RIGHT / FORM -->
+    <div class="right">
+      <div class="form-label-top">Your details</div>
 
-      <div class="field">
-        <label for="company">Company</label>
-        <input type="text" id="company" name="company" placeholder="Company name" autocomplete="organization">
-      </div>
+      <form id="contact-form" novalidate>
 
-      <!-- HubSpot: map to contact property "contact_type" or similar -->
-      <div class="field">
-        <label for="contact_type">I am a</label>
-        <select id="contact_type" name="contact_type">
-          <option value="" disabled selected>Select one</option>
-          <option value="investor_pe_vc">PE / VC Fund</option>
-          <option value="investor_family_office">Family Office</option>
-          <option value="investor_hnw">High Net Worth Investor</option>
-          <option value="founder_sports_tech">Sports Technology Founder</option>
-          <option value="sports_property">Sports Property / Rights Holder</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="firstname">First name</label>
+            <input type="text" id="firstname" name="firstname" placeholder="James" autocomplete="given-name" required>
+          </div>
+          <div class="field">
+            <label for="lastname">Last name</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Smith" autocomplete="family-name" required>
+          </div>
+        </div>
 
-      <!-- HubSpot: map to "message" or "notes" -->
-      <div class="field">
-        <label for="message">Anything else</label>
-        <textarea id="message" name="message" placeholder="Optional — add any context that would be helpful."></textarea>
-      </div>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="james@company.com" autocomplete="email" required>
+        </div>
 
-      <div class="submit-row">
-        <div class="submit-note">We will be in touch shortly. All enquiries are treated in confidence.</div>
-        <button type="submit">Send &rarr;</button>
-      </div>
+        <div class="field">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" placeholder="Company name" autocomplete="organization">
+        </div>
 
-    </form>
+        <div class="field">
+          <label for="contact_type">I am a</label>
+          <select id="contact_type" name="contact_type">
+            <option value="" disabled selected>Select one</option>
+            <option value="PE/VC Fund">PE / VC Fund</option>
+            <option value="Family Office">Family Office</option>
+            <option value="High Net Worth Investor">High Net Worth Investor</option>
+            <option value="Sports Technology Founder">Sports Technology Founder</option>
+            <option value="Sports Property/Rights Holder">Sports Property / Rights Holder</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="message">Anything else</label>
+          <textarea id="message" name="message" placeholder="Optional â add any context that would be helpful."></textarea>
+        </div>
+
+        <div id="form-status" class="form-status"></div>
+
+        <div class="submit-row">
+          <div class="submit-note">We will be in touch shortly. All enquiries are treated in confidence.</div>
+          <button type="submit" id="submit-btn">Send &rarr;</button>
+        </div>
+
+      </form>
+    </div>
+
   </div>
 
-</div>
+  <footer>
+    <div class="foot-brand">
+      <div class="foot-wordmark">
+        <span class="wm-main">Mayfair</span><span class="wm-italic">&nbsp;Sports Capital</span>
+      </div>
+      <div class="foot-rule"></div>
+      <div class="foot-tagline">Capital meets sport.</div>
+    </div>
+    <div class="foot-copy">&copy; 2026 Mayfair Sports Capital Ltd.</div>
+  </footer>
 
-<footer>
-  <div class="foot-logo">Mayfair <em>Sports</em> Capital</div>
-  <div class="foot-copy">&copy; 2026 Mayfair Sports Capital Ltd.</div>
-</footer>
+  <script>
+    // âââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+    // HubSpot Forms API Integration
+    // Portal ID: 148089624 (EU1 region)
+    // Form GUID: d1dd656f-cd61-4b1c-a1dd-4b36c1997c4a
+    // âââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+
+    const HS_PORTAL  = '148089624';
+    const HS_FORM    = 'd1dd656f-cd61-4b1c-a1dd-4b36c1997c4a';
+    const HS_API     = 'https://api-eu1.hsforms.com/submissions/v3/integration/submit/' + HS_PORTAL + '/' + HS_FORM;
+
+    var form      = document.getElementById('contact-form');
+    var submitBtn = document.getElementById('submit-btn');
+    var statusEl  = document.getElementById('form-status');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      var firstname = document.getElementById('firstname').value.trim();
+      var lastname  = document.getElementById('lastname').value.trim();
+      var email     = document.getElementById('email').value.trim();
+      var company   = document.getElementById('company').value.trim();
+      var ctype     = document.getElementById('contact_type').value;
+      var message   = document.getElementById('message').value.trim();
+
+      // Validate
+      if (!firstname || !lastname || !email) {
+        showStatus('error', 'Please fill in your name and email address.');
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showStatus('error', 'Please enter a valid email address.');
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      // Build fields array
+      var fields = [
+        { objectTypeId: '0-1', name: 'firstname', value: firstname },
+        { objectTypeId: '0-1', name: 'lastname',  value: lastname },
+        { objectTypeId: '0-1', name: 'email',     value: email }
+      ];
+      if (company) fields.push({ objectTypeId: '0-1', name: 'company', value: company });
+      if (ctype)   fields.push({ objectTypeId: '0-1', name: 'contact_type', value: ctype });
+      if (message) fields.push({ objectTypeId: '0-1', name: 'message', value: message });
+
+      var payload = {
+        submittedAt: Date.now().toString(),
+        fields: fields,
+        context: {
+          pageUri:  window.location.href,
+          pageName: document.title
+        }
+      };
+
+      // Include HubSpot tracking cookie if present
+      var hutk = getCookie('hubspotutk');
+      if (hutk) payload.context.hutk = hutk;
+
+      fetch(HS_API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      .then(function(resp) {
+        if (resp.ok) {
+          showStatus('success', 'Thank you. We\'ll be in touch shortly.');
+          form.reset();
+        } else {
+          return resp.json().then(function(data) {
+            var msg = (data.errors && data.errors[0] && data.errors[0].message)
+              ? data.errors[0].message
+              : 'Something went wrong. Please try again or email us directly.';
+            showStatus('error', msg);
+          });
+        }
+      })
+      .catch(function() {
+        showStatus('error', 'Connection error. Please email hello@mayfairsportscapital.co.uk directly.');
+      })
+      .finally(function() {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Send &rarr;';
+      });
+    });
+
+    // Identify visitor in HubSpot when they enter their email
+    document.getElementById('email').addEventListener('blur', function() {
+      var em = this.value.trim();
+      if (em && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em) && window._hsq) {
+        window._hsq.push(['identify', { email: em }]);
+        window._hsq.push(['trackPageView']);
+      }
+    });
+
+    function showStatus(type, msg) {
+      statusEl.className = 'form-status ' + type;
+      statusEl.textContent = msg;
+      if (type === 'success') {
+        setTimeout(function() { statusEl.className = 'form-status'; statusEl.textContent = ''; }, 8000);
+      }
+    }
+
+    function getCookie(name) {
+      var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      return m ? m[2] : null;
+    }
+  </script>
 
 </body>
 </html>
