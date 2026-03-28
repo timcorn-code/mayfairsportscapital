@@ -355,7 +355,32 @@
       footer { padding: 2rem 2rem; flex-direction: column; align-items: flex-start; gap: 1.2rem; }
       .foot-brand { gap: 0.3rem; }
     }
-  </style>
+  
+    .foot-links {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .foot-links a {
+      font-size: 0.7rem;
+      color: rgba(234,230,222,0.42);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+    }
+    .foot-links a:hover { color: rgba(234,230,222,0.72); }
+    .foot-disclaimer {
+      padding: 1.6rem 5rem 2rem;
+      background: var(--black);
+      border-top: 0.5px solid var(--line);
+    }
+    .foot-disclaimer p {
+      font-size: 0.62rem;
+      color: rgba(234,230,222,0.32);
+      line-height: 1.7;
+      max-width: 960px;
+      font-weight: 300;
+    }
+    </style>
 </head>
 <body>
 
@@ -370,6 +395,10 @@
     <div class="left">
       <div class="left-top">
         <div class="page-label">Contact</div>
+        <div class="foot-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="cookies.html">Cookie Policy</a>
+        </div>
         <h1 class="page-h1">Start a<br><em>conversation.</em></h1>
         <p class="page-sub">We work with a select group of investors, founders and sports properties. If you believe there is a fit, we want to hear from you.</p>
       </div>
@@ -446,6 +475,10 @@
       <div class="foot-tagline">Capital meets sport.</div>
     </div>
     <div class="foot-copy">&copy; 2026 Mayfair Sports Capital Ltd.</div>
+  
+    <div class="foot-disclaimer">
+      <p>Mayfair Sports Capital Limited is not authorised or regulated by the Financial Conduct Authority (FCA) or any other regulatory body. Nothing on this website constitutes financial, investment, legal, or tax advice, nor should it be construed as an offer, solicitation, or recommendation to buy or sell any financial instrument or investment product. All information is provided for general informational purposes only. Mayfair Sports Capital Limited accepts no liability for any loss or damage arising from reliance on information contained on this website. Mayfair Sports Capital Limited is registered in England and Wales. Company registration number: 17114469.</p>
+    </div>
   </footer>
 
   <script>
