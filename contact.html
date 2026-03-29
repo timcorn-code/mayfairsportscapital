@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact â Mayfair Sports Capital</title>
+<title>Contact &mdash; Mayfair Sports Capital</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-  /* ââ Reset ââ */
+  /* -- Reset -- */
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-  /* ââ Brand Tokens ââ */
+  /* -- Brand Tokens -- */
   :root {
     --green: #3D6B4A;
     --green-light: #4A7D59;
@@ -32,7 +32,7 @@
   html { scroll-behavior: smooth; }
   body { background: var(--bg); color: var(--cream); font-family: var(--sans); line-height: 1.6; overflow-x: hidden; }
 
-  /* ââ Nav ââ */
+  /* -- Nav -- */
   nav {
     display: flex; align-items: center; justify-content: space-between;
     padding: 28px 80px;
@@ -55,13 +55,13 @@
   .back-link .arrow { transition: transform 0.3s; }
   .back-link:hover .arrow { transform: translateX(-4px); }
 
-  /* ââ Main layout ââ */
+  /* -- Main layout -- */
   .contact-page {
     display: grid; grid-template-columns: 1fr 1fr;
     min-height: calc(100vh - 85px);
   }
 
-  /* ââ Left column ââ */
+  /* -- Left column -- */
   .contact-left {
     padding: 80px 80px 80px;
     display: flex; flex-direction: column; justify-content: space-between;
@@ -83,7 +83,7 @@
     font-size: 14px; color: var(--cream-38); line-height: 1.6;
   }
 
-  /* ââ Right column (form) ââ */
+  /* -- Right column (form) -- */
   .contact-right {
     padding: 80px 80px;
     background: var(--bg-alt);
@@ -125,7 +125,7 @@
 
   textarea { resize: vertical; min-height: 100px; }
 
-  /* ââ Send button ââ */
+  /* -- Send button -- */
   .form-footer {
     display: flex; align-items: center; justify-content: space-between;
     margin-top: 40px;
@@ -144,7 +144,7 @@
   .send-btn .arrow { transition: transform 0.3s; }
   .send-btn:hover .arrow { transform: translateX(4px); }
 
-  /* ââ Footer (same as homepage) ââ */
+  /* -- Footer (same as homepage) -- */
   footer {
     background: var(--bg);
     padding: 48px 80px 40px;
@@ -184,7 +184,7 @@
     <span class="logo-sports">Sports Capital</span>
   </a>
   <a href="index.html" class="back-link">
-    <span class="arrow">â</span> Back
+    <span class="arrow">&larr;</span> Back
   </a>
 </nav>
 
@@ -240,12 +240,12 @@
 
       <div class="form-group">
         <label>Anything Else</label>
-        <textarea name="message" placeholder="Optional â add any context that would be helpful."></textarea>
+        <textarea name="message" placeholder="Optional &mdash; add any context that would be helpful."></textarea>
       </div>
 
       <div class="form-footer">
         <div class="form-note">We will be in touch shortly. All enquiries are treated in confidence.</div>
-        <button type="submit" class="send-btn">Send <span class="arrow">â</span></button>
+        <button type="submit" class="send-btn">Send <span class="arrow">&rarr;</span></button>
       </div>
     </form>
 
@@ -271,7 +271,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">Â© 2026 Mayfair Sports Capital Ltd.</div>
+    <div class="footer-copy">&copy; 2026 Mayfair Sports Capital Ltd.</div>
     <div class="footer-disclaimer">Mayfair Sports Capital Limited is not authorised or regulated by the Financial Conduct Authority (FCA) or any other regulatory body. Nothing on this website constitutes financial, investment, legal, or tax advice, nor should it be construed as an offer, solicitation, or recommendation to buy or sell any financial instrument or investment product. All information is provided for general informational purposes only. Mayfair Sports Capital Limited accepts no liability for any loss or damage arising from reliance on information contained on this website. Mayfair Sports Capital Limited is registered in England and Wales. Company registration number: 17114469.</div>
   </div>
 </footer>
@@ -281,7 +281,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
   e.preventDefault();
   const btn = this.querySelector('.send-btn');
   const origHTML = btn.innerHTML;
-  btn.innerHTML = 'Sendingâ¦';
+  btn.innerHTML = 'Sending...';
   btn.disabled = true;
 
   const fd = new FormData(this);
@@ -302,7 +302,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
         fields: fields,
         context: {
           pageUri: window.location.href,
-          pageName: 'Contact â Mayfair Sports Capital'
+          pageName: 'Contact - Mayfair Sports Capital'
         }
       })
     });
