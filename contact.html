@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact &mdash; Mayfair Sports Capital</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   /* -- Reset -- */
@@ -172,6 +173,32 @@
   .footer-disclaimer {
     font-size: 9px; color: var(--cream-22); line-height: 1.5;
     max-width: 700px; text-align: right;
+  }
+
+  /* -- Responsive -- */
+  @media (max-width: 768px) {
+    nav { padding: 20px 24px; }
+    .logo-mayfair { font-size: 11px !important; letter-spacing: 4px !important; }
+    .logo-sports { font-size: 15px !important; }
+    .back-link { font-size: 10px; letter-spacing: 2px; }
+
+    .contact-page { grid-template-columns: 1fr; min-height: auto; }
+    .contact-left { padding: 48px 24px 40px; }
+    .contact-left h1 { font-size: 32px; margin-bottom: 24px; }
+    .contact-left .intro { font-size: 14px; }
+    .contact-location { padding-top: 24px; }
+
+    .contact-right { padding: 48px 24px; }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .form-footer { flex-direction: column; gap: 24px; align-items: flex-start; }
+    .send-btn { width: 100%; justify-content: center; }
+
+    footer { padding: 36px 24px 32px; }
+    .footer-top { flex-direction: column; gap: 20px; }
+    .footer-links { gap: 20px; }
+    .footer-bottom { flex-direction: column; gap: 16px; }
+    .footer-disclaimer { text-align: left; max-width: 100%; }
+    .footer-copy { white-space: normal; }
   }
 </style>
 </head>
