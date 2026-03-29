@@ -1,596 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact — Mayfair Sports Capital</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact â Mayfair Sports Capital</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  /* ââ Reset ââ */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-  <!-- HubSpot Tracking Code (EU1) -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/148089624.js"></script>
+  /* ââ Brand Tokens ââ */
+  :root {
+    --green: #3D6B4A;
+    --green-light: #4A7D59;
+    --green-glow: rgba(61, 107, 74, 0.15);
+    --green-subtle: rgba(61, 107, 74, 0.08);
+    --bg: #090D09;
+    --bg-alt: #0B100B;
+    --bg-card: #0D120D;
+    --cream: #D4D0C8;
+    --cream-80: rgba(212, 208, 200, 0.80);
+    --cream-50: rgba(212, 208, 200, 0.50);
+    --cream-38: rgba(212, 208, 200, 0.38);
+    --cream-22: rgba(212, 208, 200, 0.22);
+    --cream-15: rgba(212, 208, 200, 0.15);
+    --cream-10: rgba(212, 208, 200, 0.10);
+    --serif: 'Libre Baskerville', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
 
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--cream); font-family: var(--sans); line-height: 1.6; overflow-x: hidden; }
 
-    :root {
-      --black:   #090d09;
-      --black2:  #0b100b;
-      --black3:  #0d120d;
-      --green:   #3d6b4a;
-      --white:   #eae6de;
-      --muted:   rgba(234, 230, 222, 0.52);
-      --line:    rgba(234, 230, 222, 0.07);
-      --input-bg:     rgba(234, 230, 222, 0.04);
-      --input-border: rgba(234, 230, 222, 0.12);
-      --input-focus:  rgba(234, 230, 222, 0.25);
-    }
+  /* ââ Nav ââ */
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 28px 80px;
+    background: var(--bg);
+  }
+  .logo { display: flex; align-items: baseline; gap: 8px; text-decoration: none; }
+  .logo-mayfair {
+    font-family: var(--sans); font-weight: 600; font-size: 13px;
+    letter-spacing: 5px; text-transform: uppercase; color: var(--green);
+  }
+  .logo-sports {
+    font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--cream);
+  }
+  .back-link {
+    color: var(--cream-50); text-decoration: none; font-size: 12px;
+    letter-spacing: 3px; text-transform: uppercase; transition: color 0.3s;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .back-link:hover { color: var(--green-light); }
+  .back-link .arrow { transition: transform 0.3s; }
+  .back-link:hover .arrow { transform: translateX(-4px); }
 
-    html { scroll-behavior: smooth; }
+  /* ââ Main layout ââ */
+  .contact-page {
+    display: grid; grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - 85px);
+  }
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--black);
-      color: var(--white);
-      font-weight: 300;
-      -webkit-font-smoothing: antialiased;
-      min-height: 100vh;
-    }
+  /* ââ Left column ââ */
+  .contact-left {
+    padding: 80px 80px 80px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .contact-left-top {}
+  .section-label {
+    font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--green); font-weight: 500; margin-bottom: 32px;
+  }
+  .contact-left h1 {
+    font-family: var(--serif); font-size: 42px; font-weight: 400; line-height: 1.2;
+    margin-bottom: 32px;
+  }
+  .contact-left h1 em { font-style: italic; }
+  .contact-left .intro {
+    font-size: 15px; color: var(--cream-50); line-height: 1.7; max-width: 400px;
+  }
+  .contact-location {
+    font-size: 14px; color: var(--cream-38); line-height: 1.6;
+  }
 
-    /* ── NAV ── */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 2rem 5rem;
-      border-bottom: 0.5px solid var(--line);
-      background: var(--black);
-    }
+  /* ââ Right column (form) ââ */
+  .contact-right {
+    padding: 80px 80px;
+    background: var(--bg-alt);
+  }
+  .form-label-top {
+    font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--green); font-weight: 500; margin-bottom: 40px;
+  }
 
-    .logo {
-      text-decoration: none;
-      display: flex;
-      align-items: baseline;
-      gap: 0;
-      font-family: Georgia, 'Times New Roman', serif;
-    }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 28px; }
+  .form-group { margin-bottom: 28px; }
 
-    .logo-mayfair {
-      font-size: 1.35rem;
-      font-weight: 400;
-      color: var(--green);
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-    }
+  .form-group label, .form-row label {
+    display: block; font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--cream-38); margin-bottom: 10px; font-weight: 500;
+  }
+  .form-row .form-field label {
+    display: block; font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--cream-38); margin-bottom: 10px; font-weight: 500;
+  }
 
-    .logo-sc {
-      font-size: 1.35rem;
-      font-weight: 400;
-      font-style: italic;
-      color: rgba(234, 230, 222, 0.8);
-      letter-spacing: 0.04em;
-    }
+  input, select, textarea {
+    width: 100%; background: transparent;
+    border: none; border-bottom: 1px solid var(--cream-10);
+    border-radius: 0; padding: 16px 18px;
+    font-family: var(--sans); font-size: 15px; color: var(--cream);
+    outline: none; transition: border-color 0.3s;
+    -webkit-appearance: none;
+  }
+  input::placeholder, textarea::placeholder { color: var(--cream-22); }
+  input:focus, select:focus, textarea:focus { border-color: var(--green); }
 
-    .back {
-      font-size: 0.62rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(234,230,222,0.35);
-      text-decoration: none;
-      font-weight: 400;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: color 0.2s;
-    }
-    .back:hover { color: var(--white); }
+  select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23EAE6DE' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 18px center;
+  }
+  select option { background: var(--bg); color: var(--cream); }
 
-    /* ── PAGE ── */
-    .page {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: calc(100vh - 73px);
-    }
+  textarea { resize: vertical; min-height: 100px; }
 
-    /* ── LEFT ── */
-    .left {
-      padding: 7rem 5rem;
-      background: var(--black2);
-      border-right: 0.5px solid var(--line);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+  /* ââ Send button ââ */
+  .form-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 40px;
+  }
+  .form-note { font-size: 13px; color: var(--cream-38); max-width: 260px; line-height: 1.5; }
+  .send-btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: transparent; border: none; border-bottom: 1px solid var(--cream-22);
+    color: var(--cream); font-family: var(--sans); font-size: 12px;
+    letter-spacing: 3px; text-transform: uppercase; padding: 18px 40px;
+    cursor: pointer; transition: all 0.3s;
+  }
+  .send-btn:hover {
+    border-bottom-color: var(--green); color: var(--green);
+  }
+  .send-btn .arrow { transition: transform 0.3s; }
+  .send-btn:hover .arrow { transform: translateX(4px); }
 
-    .page-label {
-      font-size: 0.6rem;
-      letter-spacing: 0.26em;
-      text-transform: uppercase;
-      color: rgba(234,230,222,0.2);
-      margin-bottom: 1.5rem;
-    }
-
-    .page-h1 {
-      font-family: 'Libre Baskerville', serif;
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      font-weight: 400;
-      line-height: 1.2;
-      color: var(--white);
-      margin-bottom: 2rem;
-    }
-    .page-h1 em { font-style: italic; }
-
-    .page-sub {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.85;
-      max-width: 360px;
-      font-weight: 300;
-    }
-
-    .left-bottom { margin-top: 4rem; }
-
-    .left-detail {
-      font-size: 0.72rem;
-      color: rgba(234,230,222,0.2);
-      letter-spacing: 0.1em;
-      line-height: 2.2;
-    }
-
-    /* ── RIGHT / FORM ── */
-    .right {
-      padding: 7rem 5rem;
-      background: var(--black3);
-    }
-
-    .form-label-top {
-      font-size: 0.6rem;
-      letter-spacing: 0.26em;
-      text-transform: uppercase;
-      color: rgba(234,230,222,0.2);
-      margin-bottom: 3rem;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    .field-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    label {
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(234,230,222,0.32);
-      font-weight: 500;
-    }
-
-    input, select, textarea {
-      background: var(--input-bg);
-      border: 0.5px solid var(--input-border);
-      color: var(--white);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 300;
-      padding: 0.9rem 1rem;
-      outline: none;
-      border-radius: 0;
-      transition: border-color 0.2s, background 0.2s;
-      -webkit-appearance: none;
-      appearance: none;
-      width: 100%;
-    }
-
-    input::placeholder, textarea::placeholder {
-      color: rgba(234,230,222,0.2);
-    }
-
-    input:focus, select:focus, textarea:focus {
-      border-color: var(--input-focus);
-      background: rgba(234,230,222,0.06);
-    }
-
-    select {
-      cursor: pointer;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(234,230,222,0.3)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 1rem center;
-      padding-right: 2.5rem;
-    }
-
-    select option { background: #0d120d; color: var(--white); }
-
-    textarea {
-      resize: vertical;
-      min-height: 100px;
-      line-height: 1.7;
-    }
-
-    /* Submit */
-    .submit-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 0.5rem;
-      padding-top: 2rem;
-      border-top: 0.5px solid var(--line);
-    }
-
-    .submit-note {
-      font-size: 0.7rem;
-      color: rgba(234,230,222,0.18);
-      font-weight: 300;
-      max-width: 220px;
-      line-height: 1.6;
-    }
-
-    button[type="submit"] {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      font-weight: 500;
-      color: var(--black);
-      background: var(--white);
-      border: none;
-      padding: 0.95rem 2.2rem;
-      cursor: pointer;
-      transition: opacity 0.2s, transform 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    button[type="submit"]:hover {
-      opacity: 0.85;
-      transform: translateX(3px);
-    }
-
-    button[type="submit"]:disabled {
-      opacity: 0.4;
-      cursor: not-allowed;
-      transform: none;
-    }
-
-    /* Status messages */
-    .form-status {
-      display: none;
-      font-size: 0.82rem;
-      font-weight: 300;
-      line-height: 1.5;
-      padding: 0.8rem 1rem;
-      border: 0.5px solid;
-      margin-top: -0.5rem;
-    }
-    .form-status.success {
-      display: block;
-      color: #7ec77b;
-      border-color: rgba(126,199,123,0.2);
-      background: rgba(126,199,123,0.04);
-    }
-    .form-status.error {
-      display: block;
-      color: #e87c6c;
-      border-color: rgba(232,124,108,0.2);
-      background: rgba(232,124,108,0.04);
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      padding: 2.4rem 5rem;
-      border-top: 0.5px solid var(--line);
-      background: var(--black);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .foot-brand {
-      display: flex;
-      flex-direction: column;
-      gap: 0.38rem;
-    }
-
-    .foot-wordmark {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 0.85rem;
-      letter-spacing: 0.18em;
-      font-weight: 400;
-      line-height: 1;
-    }
-
-    .foot-wordmark .wm-main {
-      text-transform: uppercase;
-      color: var(--green);
-      letter-spacing: 0.22em;
-    }
-
-    .foot-wordmark .wm-italic {
-      font-style: italic;
-      color: rgba(234,230,222,0.72);
-      letter-spacing: 0.04em;
-    }
-
-    .foot-rule {
-      width: 28px;
-      height: 0.5px;
-      background: var(--green);
-      opacity: 0.5;
-    }
-
-    .foot-tagline {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 0.62rem;
-      font-style: italic;
-      color: rgba(234,230,222,0.22);
-      letter-spacing: 0.04em;
-    }
-
-    .foot-copy {
-      font-size: 0.6rem;
-      color: rgba(234,230,222,0.1);
-      letter-spacing: 0.08em;
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 860px) {
-      nav { padding: 1.6rem 2rem; }
-      .page { grid-template-columns: 1fr; }
-      .left { padding: 4rem 2rem; border-right: none; border-bottom: 0.5px solid var(--line); }
-      .right { padding: 4rem 2rem; }
-      .field-row { grid-template-columns: 1fr; }
-      .submit-row { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
-      footer { padding: 2rem 2rem; flex-direction: column; align-items: flex-start; gap: 1.2rem; }
-      .foot-brand { gap: 0.3rem; }
-    }
-  
-    .foot-links {
-      display: flex;
-      gap: 1.2rem;
-      margin-top: 0.5rem;
-    }
-    .foot-links a {
-      font-size: 0.7rem;
-      color: rgba(234,230,222,0.42);
-      text-decoration: none;
-      letter-spacing: 0.06em;
-    }
-    .foot-links a:hover { color: rgba(234,230,222,0.72); }
-    .foot-disclaimer {
-      padding: 1.6rem 5rem 2rem;
-      background: var(--black);
-      border-top: 0.5px solid var(--line);
-    }
-    .foot-disclaimer p {
-      font-size: 0.62rem;
-      color: rgba(234,230,222,0.32);
-      line-height: 1.7;
-      max-width: 960px;
-      font-weight: 300;
-    }
-    </style>
+  /* ââ Footer (same as homepage) ââ */
+  footer {
+    background: var(--bg);
+    padding: 48px 80px 40px;
+  }
+  .footer-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding-bottom: 32px;
+  }
+  .footer-brand { display: flex; align-items: baseline; gap: 8px; }
+  .footer-brand .logo-mayfair { font-size: 11px; letter-spacing: 4px; color: var(--green); }
+  .footer-brand .logo-sports { font-size: 15px; }
+  .footer-links { display: flex; gap: 32px; }
+  .footer-links a {
+    font-size: 12px; color: var(--cream-38); text-decoration: none;
+    letter-spacing: 1px; transition: color 0.3s;
+  }
+  .footer-links a:hover { color: var(--green-light); }
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding-top: 24px; gap: 80px;
+  }
+  .footer-copy {
+    font-size: 11px; color: var(--cream-22); white-space: nowrap;
+  }
+  .footer-disclaimer {
+    font-size: 9px; color: var(--cream-22); line-height: 1.5;
+    max-width: 700px; text-align: right;
+  }
+</style>
 </head>
 <body>
 
-  <nav>
-    <a href="index.html" class="logo"><span class="logo-mayfair">Mayfair</span><span class="logo-sc">&nbsp;Sports Capital</span></a>
-    <a href="index.html" class="back">&larr; Back</a>
-  </nav>
+<!-- Nav -->
+<nav>
+  <a href="index.html" class="logo">
+    <span class="logo-mayfair">MAYFAIR</span>
+    <span class="logo-sports">Sports Capital</span>
+  </a>
+  <a href="index.html" class="back-link">
+    <span class="arrow">â</span> Back
+  </a>
+</nav>
 
-  <div class="page">
+<!-- Contact Page -->
+<div class="contact-page">
 
-    <!-- LEFT -->
-    <div class="left">
-      <div class="left-top">
-        <div class="page-label">Contact</div>
-        <h1 class="page-h1">Start a<br><em>conversation.</em></h1>
-        <p class="page-sub">We work with a select group of investors, founders and sports properties. If you believe there is a fit, we want to hear from you.</p>
-      </div>
-      <div class="left-bottom">
-        <div class="left-detail">
-          London, United Kingdom
-        </div>
-      </div>
+  <!-- Left column -->
+  <div class="contact-left">
+    <div class="contact-left-top">
+      <div class="section-label">Contact</div>
+      <h1>Start a<br><em>conversation.</em></h1>
+      <p class="intro">We work with a select group of investors, founders and sports properties. If you believe there is a fit, we want to hear from you.</p>
     </div>
-
-    <!-- RIGHT / FORM -->
-    <div class="right">
-      <div class="form-label-top">Your details</div>
-
-      <form id="contact-form" novalidate>
-
-        <div class="field-row">
-          <div class="field">
-            <label for="firstname">First name</label>
-            <input type="text" id="firstname" name="firstname" placeholder="James" autocomplete="given-name" required>
-          </div>
-          <div class="field">
-            <label for="lastname">Last name</label>
-            <input type="text" id="lastname" name="lastname" placeholder="Smith" autocomplete="family-name" required>
-          </div>
-        </div>
-
-        <div class="field">
-          <label for="email">Email address</label>
-          <input type="email" id="email" name="email" placeholder="james@company.com" autocomplete="email" required>
-        </div>
-
-        <div class="field">
-          <label for="company">Company</label>
-          <input type="text" id="company" name="company" placeholder="Company name" autocomplete="organization">
-        </div>
-
-        <div class="field">
-          <label for="contact_type">I am a</label>
-          <select id="contact_type" name="contact_type">
-            <option value="" disabled selected>Select one</option>
-            <option value="PE/VC Fund">PE / VC Fund</option>
-            <option value="Family Office">Family Office</option>
-            <option value="High Net Worth Investor">High Net Worth Investor</option>
-            <option value="Sports Technology Founder">Sports Technology Founder</option>
-            <option value="Sports Property/Rights Holder">Sports Property / Rights Holder</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="message">Anything else</label>
-          <textarea id="message" name="message" placeholder="Optional — add any context that would be helpful."></textarea>
-        </div>
-
-        <div id="form-status" class="form-status"></div>
-
-        <div class="submit-row">
-          <div class="submit-note">We will be in touch shortly. All enquiries are treated in confidence.</div>
-          <button type="submit" id="submit-btn">Send &rarr;</button>
-        </div>
-
-      </form>
-    </div>
-
+    <div class="contact-location">London, United Kingdom</div>
   </div>
 
-  <footer>
-    <div class="foot-brand">
-      <div class="foot-wordmark">
-        <span class="wm-main">Mayfair</span><span class="wm-italic">&nbsp;Sports Capital</span>
+  <!-- Right column (form) -->
+  <div class="contact-right">
+    <form id="contactForm">
+      <div class="form-label-top">Your Details</div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label>First Name</label>
+          <input type="text" name="firstname" placeholder="James" required>
+        </div>
+        <div class="form-field">
+          <label>Last Name</label>
+          <input type="text" name="lastname" placeholder="Smith" required>
+        </div>
       </div>
-      <div class="foot-rule"></div>
-      <div class="foot-tagline">Capital meets sport.</div>
-      <div class="foot-links">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="cookies.html">Cookie Policy</a>
+
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="james@company.com" required>
       </div>
+
+      <div class="form-group">
+        <label>Company</label>
+        <input type="text" name="company" placeholder="Company name">
+      </div>
+
+      <div class="form-group">
+        <label>I Am A</label>
+        <select name="contact_type" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="Investor">Investor</option>
+          <option value="Founder">Founder</option>
+          <option value="Sports Property">Sports Property</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Anything Else</label>
+        <textarea name="message" placeholder="Optional â add any context that would be helpful."></textarea>
+      </div>
+
+      <div class="form-footer">
+        <div class="form-note">We will be in touch shortly. All enquiries are treated in confidence.</div>
+        <button type="submit" class="send-btn">Send <span class="arrow">â</span></button>
+      </div>
+    </form>
+
+    <div id="formSuccess" style="display:none;">
+      <div class="form-label-top">Thank You</div>
+      <h2 style="font-family:var(--serif);font-size:32px;font-weight:400;line-height:1.4;margin-bottom:20px;">We've received your<br><em style="font-style:italic;">enquiry.</em></h2>
+      <p style="font-size:15px;color:var(--cream-50);line-height:1.7;">A member of our team will be in touch shortly. All enquiries are treated in confidence.</p>
     </div>
-    <div class="foot-copy">&copy; 2026 Mayfair Sports Capital Ltd.</div>
-  
-    <div class="foot-disclaimer">
-      <p>Mayfair Sports Capital Limited is not authorised or regulated by the Financial Conduct Authority (FCA) or any other regulatory body. Nothing on this website constitutes financial, investment, legal, or tax advice, nor should it be construed as an offer, solicitation, or recommendation to buy or sell any financial instrument or investment product. All information is provided for general informational purposes only. Mayfair Sports Capital Limited accepts no liability for any loss or damage arising from reliance on information contained on this website. Mayfair Sports Capital Limited is registered in England and Wales. Company registration number: 17114469.</p>
+  </div>
+
+</div>
+
+<!-- Footer (same as homepage) -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="logo-mayfair">MAYFAIR</span>
+      <span class="logo-sports">Sports Capital</span>
     </div>
-  </footer>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="cookies.html">Cookie Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">Â© 2026 Mayfair Sports Capital Ltd.</div>
+    <div class="footer-disclaimer">Mayfair Sports Capital Limited is not authorised or regulated by the Financial Conduct Authority (FCA) or any other regulatory body. Nothing on this website constitutes financial, investment, legal, or tax advice, nor should it be construed as an offer, solicitation, or recommendation to buy or sell any financial instrument or investment product. All information is provided for general informational purposes only. Mayfair Sports Capital Limited accepts no liability for any loss or damage arising from reliance on information contained on this website. Mayfair Sports Capital Limited is registered in England and Wales. Company registration number: 17114469.</div>
+  </div>
+</footer>
 
-  <script>
-    // ═══════════════════════════════════════════════════════
-    // HubSpot Forms API Integration
-    // Portal ID: 148089624 (EU1 region)
-    // Form GUID: d1dd656f-cd61-4b1c-a1dd-4b36c1997c4a
-    // ═══════════════════════════════════════════════════════
+<script>
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('.send-btn');
+  const origHTML = btn.innerHTML;
+  btn.innerHTML = 'Sendingâ¦';
+  btn.disabled = true;
 
-    const HS_PORTAL  = '148089624';
-    const HS_FORM    = 'd1dd656f-cd61-4b1c-a1dd-4b36c1997c4a';
-    const HS_API     = 'https://api-eu1.hsforms.com/submissions/v3/integration/submit/' + HS_PORTAL + '/' + HS_FORM;
+  const fd = new FormData(this);
+  const fields = [
+    { name: 'firstname', value: fd.get('firstname') },
+    { name: 'lastname', value: fd.get('lastname') },
+    { name: 'email', value: fd.get('email') },
+    { name: 'company', value: fd.get('company') || '' },
+    { name: 'contact_type', value: fd.get('contact_type') },
+    { name: 'message', value: fd.get('message') || '' }
+  ];
 
-    var form      = document.getElementById('contact-form');
-    var submitBtn = document.getElementById('submit-btn');
-    var statusEl  = document.getElementById('form-status');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      var firstname = document.getElementById('firstname').value.trim();
-      var lastname  = document.getElementById('lastname').value.trim();
-      var email     = document.getElementById('email').value.trim();
-      var company   = document.getElementById('company').value.trim();
-      var ctype     = document.getElementById('contact_type').value;
-      var message   = document.getElementById('message').value.trim();
-
-      // Validate
-      if (!firstname || !lastname || !email) {
-        showStatus('error', 'Please fill in your name and email address.');
-        return;
-      }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        showStatus('error', 'Please enter a valid email address.');
-        return;
-      }
-
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
-
-      // Build fields array
-      var fields = [
-        { objectTypeId: '0-1', name: 'firstname', value: firstname },
-        { objectTypeId: '0-1', name: 'lastname',  value: lastname },
-        { objectTypeId: '0-1', name: 'email',     value: email }
-      ];
-      if (company) fields.push({ objectTypeId: '0-1', name: 'company', value: company });
-      if (ctype)   fields.push({ objectTypeId: '0-1', name: 'contact_type', value: ctype });
-      if (message) fields.push({ objectTypeId: '0-1', name: 'message', value: message });
-
-      var payload = {
-        submittedAt: Date.now().toString(),
+  try {
+    const res = await fetch('https://api.hsforms.com/submissions/v3/integration/submit/148089624/d1dd656f-cd61-4b1c-a1dd-4b36c1997c4a', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
         fields: fields,
         context: {
-          pageUri:  window.location.href,
-          pageName: document.title
-        }
-      };
-
-      // Include HubSpot tracking cookie if present
-      var hutk = getCookie('hubspotutk');
-      if (hutk) payload.context.hutk = hutk;
-
-      fetch(HS_API, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      })
-      .then(function(resp) {
-        if (resp.ok) {
-          showStatus('success', 'Thank you. We\'ll be in touch shortly.');
-          form.reset();
-        } else {
-          return resp.json().then(function(data) {
-            var msg = (data.errors && data.errors[0] && data.errors[0].message)
-              ? data.errors[0].message
-              : 'Something went wrong. Please try again or email us directly.';
-            showStatus('error', msg);
-          });
+          pageUri: window.location.href,
+          pageName: 'Contact â Mayfair Sports Capital'
         }
       })
-      .catch(function() {
-        showStatus('error', 'Connection error. Please email hello@mayfairsportscapital.co.uk directly.');
-      })
-      .finally(function() {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = 'Send &rarr;';
-      });
     });
 
-    // Identify visitor in HubSpot when they enter their email
-    document.getElementById('email').addEventListener('blur', function() {
-      var em = this.value.trim();
-      if (em && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em) && window._hsq) {
-        window._hsq.push(['identify', { email: em }]);
-        window._hsq.push(['trackPageView']);
-      }
-    });
-
-    function showStatus(type, msg) {
-      statusEl.className = 'form-status ' + type;
-      statusEl.textContent = msg;
-      if (type === 'success') {
-        setTimeout(function() { statusEl.className = 'form-status'; statusEl.textContent = ''; }, 8000);
-      }
+    if (res.ok || res.status === 200) {
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    } else {
+      btn.innerHTML = origHTML;
+      btn.disabled = false;
+      alert('Something went wrong. Please email us directly at tim@mayfairsportscapital.com');
     }
-
-    function getCookie(name) {
-      var m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-      return m ? m[2] : null;
-    }
-  </script>
-
+  } catch (err) {
+    btn.innerHTML = origHTML;
+    btn.disabled = false;
+    alert('Something went wrong. Please email us directly at tim@mayfairsportscapital.com');
+  }
+});
+</script>
 </body>
 </html>
