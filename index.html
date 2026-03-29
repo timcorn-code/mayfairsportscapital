@@ -1,302 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mayfair Sports Capital</title>
-  <meta name="description" content="A London-based investment and advisory firm at the intersection of sport and capital.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --black:  #090d09;
-      --black2: #0b100b;
-      --black3: #0d120d;
-      --green:  #3d6b4a;
-      --white:  #eae6de;
-      --muted:  rgba(234, 230, 222, 0.52);
-      --line:   rgba(234, 230, 222, 0.07);
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--black);
-      color: var(--white);
-      font-weight: 300;
-      -webkit-font-smoothing: antialiased;
-    }
-    /* ââ NAV ââ */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 2rem 5rem;
-      transition: background 0.5s, border-color 0.5s;
-      border-bottom: 0.5px solid transparent;
-    }
-    nav.scrolled {
-      background: rgba(9, 13, 9, 0.97);
-      border-bottom-color: var(--line);
-      backdrop-filter: blur(12px);
-    }
-    .logo {
-      text-decoration: none;
-      display: flex;
-      align-items: baseline;
-      gap: 0;
-      font-family: Georgia, 'Times New Roman', serif;
-    }
-    .logo-mayfair {
-      font-size: 1.35rem;
-      font-weight: 400;
-      color: var(--green);
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-    }
-    .logo-sc {
-      font-size: 1.35rem;
-      font-weight: 400;
-      font-style: italic;
-      color: rgba(234, 230, 222, 0.8);
-      letter-spacing: 0.04em;
-    }
-    .nav-links { display: flex; gap: 2.8rem; list-style: none; }
-    .nav-links a {
-      font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
-      color: rgba(234, 230, 222, 0.38); text-decoration: none; font-weight: 400;
-      transition: color 0.25s;
-    }
-    .nav-links a:hover { color: var(--white); }
-    /* ââ HERO ââ */
-    .hero { position: relative; height: 100vh; min-height: 640px; display: flex; align-items: flex-end; overflow: hidden; }
-    .hero-img {
-      position: absolute; inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=2000&q=90&auto=format&fit=crop&crop=center');
-      background-size: cover; background-position: center 40%;
-      filter: brightness(0.38) saturate(0.65);
-    }
-    .hero-img::before { content: ''; position: absolute; inset: 0; background: rgba(8, 18, 8, 0.5); mix-blend-mode: multiply; }
-    .hero-img::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(to bottom, rgba(9,13,9,0.0) 0%, rgba(9,13,9,0.0) 28%, rgba(9,13,9,0.7) 68%, rgba(9,13,9,0.98) 90%, rgba(9,13,9,1.0) 100%);
-    }
-    .hero-text { position: relative; z-index: 1; padding: 0 5rem 7rem; max-width: 740px; }
-    .hero-h1 {
-      font-family: 'Libre Baskerville', serif;
-      font-size: clamp(2.2rem, 4.2vw, 3.4rem); font-weight: 400; line-height: 1.18;
-      color: var(--white); margin-bottom: 1.5rem;
-      opacity: 0; animation: up 1s 0.2s forwards;
-    }
-    .hero-h1 em { font-style: italic; }
-    .hero-sub {
-      font-size: 1rem; color: rgba(234,230,222,0.5); line-height: 1.85;
-      max-width: 480px; font-weight: 300;
-      opacity: 0; animation: up 1s 0.38s forwards;
-    }
-    /* ââ ABOUT ââ */
-    .about {
-      padding: 8rem 5rem; background: var(--black2); border-top: 0.5px solid var(--line);
-      display: grid; grid-template-columns: 200px 1fr; gap: 5rem; align-items: start;
-    }
-    /* ââ ADVANTAGE ââ */
-    .advantage {
-      padding: 8rem 5rem; background: var(--black3); border-top: 0.5px solid var(--line);
-      display: grid; grid-template-columns: 200px 1fr; gap: 5rem; align-items: start;
-    }
-    .sec-label {
-      font-size: 0.6rem; letter-spacing: 0.26em; text-transform: uppercase;
-      color: rgba(234,230,222,0.2); font-weight: 500; padding-top: 0.4rem;
-    }
-    /* ââ ABOUT CONTENT ââ */
-    .about-h2 {
-      font-family: 'Libre Baskerville', serif;
-      font-size: clamp(1.2rem, 2.2vw, 1.6rem); font-weight: 400; line-height: 1.5;
-      color: var(--white);
-    }
-    .about-h2 em { font-style: italic; }
-    /* ââ PILLARS ââ */
-    .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
-    .pillar { padding-right: 3rem; border-right: 0.5px solid var(--line); margin-right: 3rem; }
-    .pillar:last-child { padding-right: 0; margin-right: 0; border-right: none; }
-    .pillar-t {
-      font-family: 'Libre Baskerville', serif; font-size: 1rem; font-weight: 700;
-      color: var(--white); margin-bottom: 0.8rem; letter-spacing: 0.02em;
-    }
-    .pillar-b { font-size: 0.88rem; color: rgba(234, 230, 222, 0.62); line-height: 1.82; font-weight: 300; }
-    /* ââ CONTACT ââ */
-    .contact {
-      padding: 8rem 5rem; background: var(--black2); border-top: 0.5px solid var(--line);
-      display: flex; justify-content: space-between; align-items: flex-end;
-    }
-    .contact-lbl { font-size: 0.6rem; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(234,230,222,0.2); margin-bottom: 1rem; }
-    .contact-link {
-      font-family: 'Libre Baskerville', serif;
-      font-size: clamp(1.4rem, 2.5vw, 2rem); font-style: italic; font-weight: 400;
-      color: var(--white); text-decoration: none;
-      display: inline-flex; align-items: baseline; gap: 0.6rem; transition: opacity 0.2s;
-    }
-    .contact-link:hover { opacity: 0.65; }
-    .contact-link .arr { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 1.2rem; font-weight: 300; transition: transform 0.25s; }
-    .contact-link:hover .arr { transform: translateX(5px); }
-    .contact-loc { font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(234,230,222,0.15); text-align: right; line-height: 2.2; }
-    /* ââ FOOTER ââ */
-    footer {
-      padding: 2.4rem 5rem; border-top: 0.5px solid var(--line); background: var(--black);
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .foot-brand {
-      display: flex;
-      flex-direction: column;
-      gap: 0.38rem;
-    }
-    .foot-wordmark {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 0.85rem;
-      letter-spacing: 0.18em;
-      font-weight: 400;
-      line-height: 1;
-    }
-    .foot-wordmark .wm-main {
-      text-transform: uppercase;
-      color: var(--green);
-      letter-spacing: 0.22em;
-    }
-    .foot-wordmark .wm-italic {
-      font-style: italic;
-      color: rgba(234,230,222,0.72);
-      letter-spacing: 0.04em;
-    }
-    .foot-rule {
-      width: 28px;
-      height: 0.5px;
-      background: var(--green);
-      opacity: 0.5;
-    }
-    .foot-tagline {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 0.62rem;
-      font-style: italic;
-      color: rgba(234,230,222,0.22);
-      letter-spacing: 0.04em;
-    }
-    .foot-copy { font-size: 0.6rem; color: rgba(234,230,222,0.1); letter-spacing: 0.08em; }
-    /* ââ ANIMATION ââ */
-    @keyframes up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-    /* ââ RESPONSIVE ââ */
-    @media (max-width: 860px) {
-      nav { padding: 1.6rem 2rem; }
-      .hero-text { padding: 0 2rem 5rem; }
-      .about, .advantage { padding: 5rem 2rem; grid-template-columns: 1fr; gap: 1.5rem; }
-      .pillars { grid-template-columns: 1fr; gap: 2.5rem; }
-      .pillar { border-right: none; padding-right: 0; margin-right: 0; padding-bottom: 2rem; border-bottom: 0.5px solid var(--line); }
-      .pillar:last-child { border-bottom: none; padding-bottom: 0; }
-      .contact { padding: 5rem 2rem; flex-direction: column; align-items: flex-start; gap: 2rem; }
-      .contact-loc { text-align: left; }
-      footer { padding: 2rem 2rem; flex-direction: column; align-items: flex-start; gap: 1.2rem; }
-      .foot-brand { gap: 0.3rem; }
-    }
-  
-    .foot-links {
-      display: flex;
-      gap: 1.2rem;
-      margin-top: 0.5rem;
-    }
-    .foot-links a {
-      font-size: 0.7rem;
-      color: rgba(234,230,222,0.42);
-      text-decoration: none;
-      letter-spacing: 0.06em;
-    }
-    .foot-links a:hover { color: rgba(234,230,222,0.72); }
-    .foot-disclaimer {
-      padding: 1.6rem 5rem 2rem;
-      background: var(--black);
-      border-top: 0.5px solid var(--line);
-    }
-    .foot-disclaimer p {
-      font-size: 0.62rem;
-      color: rgba(234,230,222,0.32);
-      line-height: 1.7;
-      max-width: 960px;
-      font-weight: 300;
-    }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mayfair Sports Capital</title>
+<meta name="description" content="A London-based investment and advisory firm at the intersection of sport and capital.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --green: #3D6B4A;
+    --green-light: #4A7D59;
+    --green-glow: rgba(61, 107, 74, 0.12);
+    --bg: #090D09;
+    --bg-alt: #0B100B;
+    --bg-card: #0D120D;
+    --cream: #D4D0C8;
+    --cream-80: rgba(212, 208, 200, 0.80);
+    --cream-50: rgba(212, 208, 200, 0.50);
+    --cream-38: rgba(212, 208, 200, 0.38);
+    --cream-22: rgba(212, 208, 200, 0.22);
+    --cream-10: rgba(212, 208, 200, 0.10);
+    --serif: 'Libre Baskerville', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--cream); font-family: var(--sans); line-height: 1.6; overflow-x: hidden; }
+
+  /* ââ Nav ââ */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 28px 80px;
+    background: rgba(9, 13, 9, 0.97);
+    backdrop-filter: blur(12px);
+    transition: padding 0.3s;
+  }
+  .logo { display: flex; align-items: baseline; gap: 8px; text-decoration: none; }
+  .logo-mayfair {
+    font-family: var(--sans); font-weight: 600; font-size: 13px;
+    letter-spacing: 5px; text-transform: uppercase; color: var(--green);
+  }
+  .logo-sports {
+    font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--cream);
+  }
+  nav ul { list-style: none; display: flex; gap: 48px; }
+  nav a { color: var(--cream-50); text-decoration: none; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; transition: color 0.3s; }
+  nav a:hover { color: var(--green-light); }
+
+  /* ââ Hero â original image, original dark treatment ââ */
+  .hero {
+    min-height: 100vh; display: flex; align-items: flex-end;
+    padding: 0 80px 120px;
+    position: relative; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: url('https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=1920&q=80') center/cover no-repeat;
+    filter: brightness(0.38) saturate(0.65);
+  }
+  .hero-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(9,13,9,0.35) 0%, rgba(9,13,9,0.82) 100%);
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 180px;
+    background: linear-gradient(to top, rgba(61, 107, 74, 0.04) 0%, transparent 100%);
+    pointer-events: none; z-index: 1;
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 700px; }
+  .hero h1 {
+    font-family: var(--serif); font-size: 54px; font-weight: 400; line-height: 1.15;
+    margin-bottom: 24px; color: var(--cream);
+  }
+  .hero h1 em { font-style: italic; }
+  .hero p { font-size: 16px; color: var(--cream-80); max-width: 480px; line-height: 1.7; }
+
+  /* ââ Section base ââ */
+  section { padding: 128px 80px; }
+
+  /* ââ About ââ */
+  .about {
+    background: var(--bg-alt);
+    display: grid; grid-template-columns: 200px 1fr; gap: 40px; align-items: start;
+  }
+  .section-label {
+    font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--green); font-weight: 500; padding-top: 12px;
+  }
+  .about h2 {
+    font-family: var(--serif); font-size: 32px; font-weight: 400; line-height: 1.45;
+    color: var(--cream);
+  }
+  .about h2 em { font-style: italic; }
+
+  /* ââ Advantage ââ */
+  .advantage {
+    background: var(--bg-card);
+  }
+  .advantage-header {
+    display: grid; grid-template-columns: 200px 1fr; gap: 40px;
+    margin-bottom: 80px;
+  }
+  .advantage-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px;
+    margin-left: 200px;
+  }
+  .adv-card {
+    padding: 0;
+    position: relative;
+  }
+  .adv-card h3 {
+    font-family: var(--serif); font-size: 22px; font-weight: 400;
+    margin-bottom: 16px; color: var(--cream);
+  }
+  .adv-card p { font-size: 15px; color: var(--cream-50); line-height: 1.7; }
+
+  /* ââ Contact / CTA ââ */
+  .contact {
+    background: var(--bg-alt);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end;
+  }
+  .contact-left .section-label { margin-bottom: 16px; }
+  .contact-left a {
+    font-family: var(--serif); font-style: italic; font-size: 42px;
+    color: var(--cream); text-decoration: none;
+    transition: color 0.3s;
+    display: inline-block;
+  }
+  .contact-left a:hover { color: var(--green-light); }
+  .contact-left a .arrow {
+    display: inline-block; transition: transform 0.3s; font-style: normal;
+    margin-left: 8px;
+  }
+  .contact-left a:hover .arrow { transform: translateX(8px); }
+  .contact-right {
+    text-align: right; font-size: 12px; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--cream-38);
+    line-height: 2;
+  }
+
+  /* ââ Footer ââ */
+  footer {
+    background: var(--bg);
+    padding: 48px 80px 40px;
+  }
+  .footer-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding-bottom: 32px;
+  }
+  .footer-brand { display: flex; align-items: baseline; gap: 8px; }
+  .footer-brand .logo-mayfair { font-size: 11px; letter-spacing: 4px; color: var(--green); }
+  .footer-brand .logo-sports { font-size: 15px; }
+  .footer-links { display: flex; gap: 32px; }
+  .footer-links a {
+    font-size: 12px; color: var(--cream-38); text-decoration: none;
+    letter-spacing: 1px; transition: color 0.3s;
+  }
+  .footer-links a:hover { color: var(--green-light); }
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    padding-top: 24px; gap: 80px;
+  }
+  .footer-copy {
+    font-size: 11px; color: var(--cream-22); white-space: nowrap;
+  }
+  .footer-disclaimer {
+    font-size: 9px; color: var(--cream-22); line-height: 1.5;
+    max-width: 700px; text-align: right;
+  }
+</style>
 </head>
 <body>
-  <nav id="nav">
-    <a href="index.html" class="logo"><span class="logo-mayfair">Mayfair</span><span class="logo-sc">&nbsp;Sports Capital</span></a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#focus">Focus</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-img"></div>
-    <div class="hero-text">
-      <h1 class="hero-h1">Capital meets <em>sports.</em></h1>
-      <p class="hero-sub">Mayfair Sports Capital is a London-based investment and advisory firm at the intersection of sports, technology and capital.</p>
+
+<nav>
+  <a href="index.html" class="logo">
+    <span class="logo-mayfair">MAYFAIR</span>
+    <span class="logo-sports">Sports Capital</span>
+  </a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#focus">Focus</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <h1>Capital meets <em>sports.</em></h1>
+    <p>Mayfair Sports Capital is a London-based investment and advisory firm at the intersection of sports, technology and capital.</p>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="section-label">About</div>
+  <h2>We unlock investment value through our insight, access to off-market opportunities and <em>ability to execute.</em></h2>
+</section>
+
+<section class="advantage" id="focus">
+  <div class="advantage-header">
+    <div class="section-label">Our Advantage</div>
+  </div>
+  <div class="advantage-grid">
+    <div class="adv-card">
+      <h3>Insight</h3>
+      <p>Deep industry experience. We know how sport operates and how capital moves through it.</p>
+    </div>
+    <div class="adv-card">
+      <h3>Access</h3>
+      <p>Proprietary, off-market opportunities across sports, technology and infrastructure â before they reach the broader market.</p>
+    </div>
+    <div class="adv-card">
+      <h3>Execution</h3>
+      <p>Full-process execution. Fees aligned to outcomes.</p>
     </div>
   </div>
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="sec-label">About</div>
-    <div>
-      <h2 class="about-h2">We unlock investment value through our insight, access to off-market opportunities and <em>ability to execute.</em></h2>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-left">
+    <div class="section-label">Get in touch</div>
+    <a href="contact.html">Start a conversation <span class="arrow">â</span></a>
+  </div>
+  <div class="contact-right">
+    London<br>United Kingdom
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="logo-mayfair">MAYFAIR</span>
+      <span class="logo-sports">Sports Capital</span>
     </div>
-  </section>
-  <!-- ADVANTAGE -->
-  <section class="advantage" id="focus">
-    <div class="sec-label">Our Advantage</div>
-    <div class="pillars">
-      <div class="pillar">
-        <div class="pillar-t">Insight</div>
-        <div class="pillar-b">Deep industry experience. We know how sport operates and how capital moves through it.</div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-t">Access</div>
-        <div class="pillar-b">Proprietary, off-market opportunities across sports, technology and infrastructure — before they reach the broader market.</div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-t">Execution</div>
-        <div class="pillar-b">Full-process execution. Fees aligned to outcomes.</div>
-      </div>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="cookies.html">Cookie Policy</a>
     </div>
-  </section>
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div>
-      <div class="contact-lbl">Get in touch</div>
-      <a href="contact.html" class="contact-link">
-        Start a conversation <span class="arr">→</span>
-      </a>
-    </div>
-    <div class="contact-loc">London<br>United Kingdom</div>
-  </section>
-  <footer>
-    <div class="foot-brand">
-      <div class="foot-wordmark">
-        <span class="wm-main">Mayfair</span><span class="wm-italic">&nbsp;Sports Capital</span>
-      </div>
-      <div class="foot-rule"></div>
-      <div class="foot-tagline">Capital meets sport.</div>
-        <div class="foot-links">
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="cookies.html">Cookie Policy</a>
-        </div>
-    </div>
-    <div class="foot-copy">&copy; 2026 Mayfair Sports Capital Ltd.</div>
-  
-    <div class="foot-disclaimer">
-      <p>Mayfair Sports Capital Limited is not authorised or regulated by the Financial Conduct Authority (FCA) or any other regulatory body. Nothing on this website constitutes financial, investment, legal, or tax advice, nor should it be construed as an offer, solicitation, or recommendation to buy or sell any financial instrument or investment product. All information is provided for general informational purposes only. Mayfair Sports Capital Limited accepts no liability for any loss or damage arising from reliance on information contained on this website. Mayfair Sports Capital Limited is registered in England and Wales. Company registration number: 17114469.</p>
-    </div>
-  </footer>
-  <script>
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 50);
-    }, { passive: true });
-  </script>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">Â© 2026 Mayfair Sports Capital Ltd.</div>
+    <div class="footer-disclaimer">Mayfair Sports Capital Limited is not authorised or regulated by the Financial Conduct Authority (FCA) or any other regulatory body. Nothing on this website constitutes financial, investment, legal, or tax advice, nor should it be construed as an offer, solicitation, or recommendation to buy or sell any financial instrument or investment product. All information is provided for general informational purposes only. Mayfair Sports Capital Limited accepts no liability for any loss or damage arising from reliance on information contained on this website. Mayfair Sports Capital Limited is registered in England and Wales. Company registration number: 17114469.</div>
+  </div>
+</footer>
+
 </body>
 </html>
+
