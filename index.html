@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mayfair Sports Capital</title>
-<meta name="description" content="Mayfair Sports Capital is a London-based, operator-led advisory for private capital entering sport.">
+<meta name="description" content="Mayfair Sports Capital is a London-based buy-side advisory for sports investments below £50m.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
@@ -275,6 +275,19 @@
   }
   .hero::after { background: none; }
   footer { border-top: 1px solid rgba(27, 27, 24, 0.08); }
+
+  /* ==== 2026 REFRESH ==== */
+  .hero-label { margin-top: 28px; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--green); font-weight: 500; }
+  .about-text p { font-size: 16px; line-height: 1.7; color: var(--cream-80); max-width: 560px; margin-top: 28px; }
+  .approach { background: var(--bg-card); }
+  .approach .advantage-grid { grid-template-columns: repeat(4, 1fr); gap: 40px; }
+  .focus-entry p { font-size: 15px; }
+  @media (max-width: 1100px) { .approach .advantage-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 768px) {
+    .approach .advantage-grid { grid-template-columns: 1fr; }
+    .about-text p { font-size: 14px; }
+    .hero-label { font-size: 10px; letter-spacing: 2px; }
+  }
 </style>
 </head>
 <body>
@@ -287,6 +300,7 @@
   <ul>
     <li><a href="#about">About</a></li>
     <li><a href="#focus">Focus</a></li>
+    <li><a href="#approach">Approach</a></li>
     <li><a href="/contact/">Contact</a></li>
   </ul>
 </nav>
@@ -295,40 +309,65 @@
   <div class="hero-bg"></div>
   <div class="hero-content">
     <h1>Capital meets <em>sport.</em></h1>
-    <p>Mayfair Sports Capital is a London-based, operator-led advisory for private capital entering sport.</p>
+    <p>Buy-side advisory for sports investments below &pound;50m.</p>
+    <div class="hero-label">Family offices &middot; Private equity funds &middot; HNWs</div>
   </div>
 </div>
 
 <section class="about" id="about">
   <div class="section-label">About</div>
-  <h2>We partner with family offices and private capital on their side of the table, <em>before, during and after the deal.</em></h2>
+  <div class="about-text">
+    <h2>We bring research, benchmarking and independent analysis to investors in a <em>complex private market.</em></h2>
+    <p>Our experience is built from 20+ years in sport, with a network that spans sports IP, investors and adjacent businesses.</p>
+  </div>
 </section>
 
 <section class="advantage" id="focus">
   <div class="advantage-header">
-    <div class="section-label">Our Advantage</div>
+    <div class="section-label">Focus</div>
   </div>
   <div class="advantage-grid">
-    <div class="adv-card">
-      <div class="adv-num">01</div>
-      <h3>Operators first</h3>
-      <p>We are operators first, with experience across the whole sporting landscape. We advise on capital allocation before we ever surface a specific opportunity.</p>
+    <div class="adv-card focus-entry">
+      <h3>European football</h3>
+      <p>Clubs, leagues, competitions and the businesses around them.</p>
     </div>
-    <div class="adv-card">
-      <div class="adv-num">02</div>
-      <h3>A methodology built for sport</h3>
-      <p>In sport, value often sits off the balance sheet in sporting, cultural and political capital. Our methodology reads those factors to find where value is mispriced.</p>
+    <div class="adv-card focus-entry">
+      <h3>Emerging and challenger sports</h3>
+      <p>New formats and earlier-stage opportunities: franchises, leagues, tours and events outside football.</p>
     </div>
-    <div class="adv-card">
-      <div class="adv-num">03</div>
-      <h3>Access</h3>
-      <p>Our network spans European sports IP, technology, funds and adjacent strategic businesses. We originate, analyse and curate deal flow, advise through to close and then drive the value we underwrote using our operator experience.</p>
+    <div class="adv-card focus-entry">
+      <h3>Sports adjacent</h3>
+      <p>Technology, data, media and platforms, agencies, venues and promoters.</p>
     </div>
   </div>
 </section>
 
-<section class="quote-strip">
-  <p>&ldquo;We hold no sell-side mandates and take no sell-side fees. Our incentives are aligned to finding the right opportunity for your capital and driving value behind the return.&rdquo;</p>
+<section class="advantage approach" id="approach">
+  <div class="advantage-header">
+    <div class="section-label">Approach</div>
+  </div>
+  <div class="advantage-grid">
+    <div class="adv-card">
+      <div class="adv-num">01</div>
+      <h3>Mandate and market map</h3>
+      <p>We take a first-principles approach to investing in sport. We build the mandate, then map the market.</p>
+    </div>
+    <div class="adv-card">
+      <div class="adv-num">02</div>
+      <h3>Screening</h3>
+      <p>We screen and benchmark assets, surface red flags early and gauge the possible upside, tested against the mandate.</p>
+    </div>
+    <div class="adv-card">
+      <div class="adv-num">03</div>
+      <h3>Investment case</h3>
+      <p>We take a deep read: scenarios, costed and mapped upsides, and a deeper understanding of the red flags and risk.</p>
+    </div>
+    <div class="adv-card">
+      <div class="adv-num">04</div>
+      <h3>Transaction advisory</h3>
+      <p>We advise through to close, coordinating the approach, valuation, diligence and negotiation strategy.</p>
+    </div>
+  </div>
 </section>
 
 <section class="contact" id="contact">
