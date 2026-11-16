@@ -2,7 +2,7 @@
    - header turns solid on scroll
    - left-hand menu drawer (focus trap, Esc, inert page behind, scroll lock)
    - reveal-on-scroll
-   - cookie consent and consent-gated Google Analytics
+   - cookie consent and consent-gated analytics (Google Analytics, HubSpot, Apollo)
    - contact form -> HubSpot Forms API
 */
 (function () {
@@ -26,6 +26,8 @@
   const body = doc.body;
   const mode = body.getAttribute('data-mode') || 'prod';
   const gaId = body.getAttribute('data-ga') || '';
+  const hsId = body.getAttribute('data-hs') || '';
+  const apolloId = body.getAttribute('data-apollo') || '';
   const reduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
   const $ = (sel, ctx) => (ctx || doc).querySelector(sel);
@@ -464,8 +466,9 @@
     if (reduce) { t = 1; kick(); }
   }
 
-  /* -------------------------------------- consent and Google Analytics (GA4) */
-  const KEY = 'msc_consent';
+  /* ------------------- consent, Google Analytics (GA4), HubSpot and Apollo */
+  // v2: the banner now also covers HubSpot and Apollo, so earlier choices are asked again.
+  const KEY = 'msc_consent_v2';
   const banner = $('#consent');
   let gaLoaded = false;
   let consentOpener = null;
@@ -485,10 +488,40 @@
     doc.head.appendChild(s);
   };
 
+  // HubSpot tracking code: ties page views to known contacts in the CRM.
+  let hsLoaded = false;
+  const loadHubSpot = () => {
+    if (hsLoaded || mode !== 'prod' || !hsId) return;
+    hsLoaded = true;
+    const s = doc.createElement('script');
+    s.id = 'hs-script-loader';
+    s.async = true;
+    s.defer = true;
+    s.src = 'https://js-eu1.hs-scripts.com/' + encodeURIComponent(hsId) + '.js';
+    doc.head.appendChild(s);
+  };
+
+  // Apollo website visitor tracker: identifies the organisation a visit comes from.
+  let apolloLoaded = false;
+  const loadApollo = () => {
+    if (apolloLoaded || mode !== 'prod' || !apolloId) return;
+    apolloLoaded = true;
+    const n = Math.random().toString(36).substring(7);
+    const o = doc.createElement('script');
+    o.src = 'https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=' + n;
+    o.async = true;
+    o.defer = true;
+    o.onload = function () { window.trackingFunctions.onLoad({ appId: apolloId }); };
+    doc.head.appendChild(o);
+  };
+
+  const loadAnalytics = () => { loadGA(); loadHubSpot(); loadApollo(); };
+
   const clearGaCookies = () => {
     const names = doc.cookie.split(';')
       .map((c) => c.split('=')[0].trim())
-      .filter((n) => n === '_ga' || n === '_gid' || n.indexOf('_ga_') === 0 || n.indexOf('_gat') === 0);
+      .filter((n) => n === '_ga' || n === '_gid' || n.indexOf('_ga_') === 0 || n.indexOf('_gat') === 0 ||
+        n === '__hstc' || n === 'hubspotutk' || n === '__hssc' || n === '__hssrc');
     if (!names.length) return;
     const host = window.location.hostname;
     const parts = host.split('.');
@@ -519,16 +552,17 @@
   const choose = (value) => {
     store.set(KEY, value);
     if (value === 'granted') {
-      loadGA();
+      loadAnalytics();
     } else {
       if (gaId) window['ga-disable-' + gaId] = true;
+      if (hsLoaded) { window._hsp = window._hsp || []; window._hsp.push(['revokeCookieConsent']); }
       clearGaCookies();
     }
     hideBanner();
   };
 
   const saved = store.get(KEY);
-  if (saved === 'granted') loadGA();
+  if (saved === 'granted') loadAnalytics();
   else if (saved !== 'denied') showBanner(false);
 
   $$('[data-consent]').forEach((b) => b.addEventListener('click', () => choose(b.getAttribute('data-consent'))));
@@ -603,7 +637,11 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           fields: fields,
-          context: { pageUri: window.location.href, pageName: 'Contact - Mayfair Sports Capital' }
+          context: Object.assign(
+            { pageUri: window.location.href, pageName: 'Contact - Mayfair Sports Capital' },
+            // If analytics was accepted, link this enquiry to the visitor's earlier page views.
+            (doc.cookie.match(/(?:^|; )hubspotutk=([^;]+)/) || [])[1] ? { hutk: doc.cookie.match(/(?:^|; )hubspotutk=([^;]+)/)[1] } : {}
+          )
         })
       }).then((res) => {
         if (!res.ok) throw new Error('HTTP ' + res.status);
