@@ -1,90 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB" class="no-js">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy — Mayfair Sports Capital</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --black: #090d09; --black2: #0b100b; --black3: #0d120d;
-      --green: #3d6b4a; --white: #eae6de;
-      --muted: rgba(234, 230, 222, 0.52);
-      --line: rgba(234, 230, 222, 0.07);
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--black); color: var(--white); font-weight: 300; -webkit-font-smoothing: antialiased; min-height: 100vh; }
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 2rem 5rem; border-bottom: 0.5px solid var(--line); background: var(--black); }
-    .logo { text-decoration: none; display: flex; align-items: baseline; gap: 0; font-family: Georgia, 'Times New Roman', serif; }
-    .logo-mayfair { font-size: 1.35rem; font-weight: 400; color: var(--green); letter-spacing: 0.2em; text-transform: uppercase; }
-    .logo-sc { font-size: 1.35rem; font-weight: 400; font-style: italic; color: rgba(234, 230, 222, 0.8); letter-spacing: 0.04em; }
-    .back { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(234,230,222,0.35); text-decoration: none; font-weight: 400; display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s; }
-    .back:hover { color: var(--white); }
-    .policy { max-width: 720px; margin: 0 auto; padding: 5rem 2rem 4rem; }
-    .policy-label { font-size: 0.6rem; letter-spacing: 0.26em; text-transform: uppercase; color: rgba(234,230,222,0.2); margin-bottom: 1.5rem; }
-    .policy h1 { font-family: 'Libre Baskerville', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 400; line-height: 1.2; color: var(--white); margin-bottom: 1rem; }
-    .policy h1 em { font-style: italic; }
-    .policy-date { font-size: 0.72rem; color: rgba(234,230,222,0.25); margin-bottom: 3rem; letter-spacing: 0.06em; }
-    .policy h2 { font-family: 'Libre Baskerville', serif; font-size: 1.05rem; font-weight: 400; color: var(--white); margin: 2.4rem 0 0.8rem; }
-    .policy p { font-size: 0.85rem; color: var(--muted); line-height: 1.85; font-weight: 300; margin-bottom: 1rem; }
-    .policy ul { list-style: none; padding: 0; margin-bottom: 1rem; }
-    .policy ul li { font-size: 0.85rem; color: var(--muted); line-height: 1.85; font-weight: 300; padding-left: 1.2rem; position: relative; margin-bottom: 0.3rem; }
-    .policy ul li::before { content: '\2013'; position: absolute; left: 0; color: var(--green); }
-    .policy a { color: var(--green); text-decoration: none; }
-    .policy a:hover { text-decoration: underline; }
-    footer { padding: 2.4rem 5rem; border-top: 0.5px solid var(--line); background: var(--black); display: flex; justify-content: space-between; align-items: center; }
-    .foot-brand { display: flex; flex-direction: column; gap: 0.38rem; }
-    .foot-wordmark { font-family: Georgia, 'Times New Roman', serif; font-size: 0.85rem; letter-spacing: 0.18em; font-weight: 400; line-height: 1; }
-    .foot-wordmark .wm-main { text-transform: uppercase; color: var(--green); letter-spacing: 0.22em; }
-    .foot-wordmark .wm-italic { font-style: italic; color: rgba(234,230,222,0.72); letter-spacing: 0.04em; }
-    .foot-rule { width: 28px; height: 0.5px; background: var(--green); opacity: 0.5; }
-    .foot-tagline { font-family: Georgia, 'Times New Roman', serif; font-size: 0.62rem; font-style: italic; color: rgba(234,230,222,0.22); letter-spacing: 0.04em; }
-    .foot-links { display: flex; gap: 1.2rem; margin-top: 0.5rem; }
-    .foot-links a { font-size: 0.7rem; color: rgba(234,230,222,0.42); text-decoration: none; letter-spacing: 0.06em; }
-    .foot-links a:hover { color: rgba(234,230,222,0.72); }
-    .foot-copy { font-size: 0.6rem; color: rgba(234,230,222,0.1); letter-spacing: 0.08em; }
-    .foot-disclaimer { padding: 1.6rem 5rem 2rem; background: var(--black); border-top: 0.5px solid var(--line); }
-    .foot-disclaimer p { font-size: 0.62rem; color: rgba(234,230,222,0.32); line-height: 1.7; max-width: 960px; font-weight: 300; }
-    @media (max-width: 860px) {
-      nav { padding: 1.6rem 2rem; }
-      .policy { padding: 3rem 1.5rem 3rem; }
-      footer { padding: 2rem 2rem; flex-direction: column; align-items: flex-start; gap: 1.2rem; }
-      .foot-disclaimer { padding: 1.6rem 2rem 2rem; }
-    }
-
-    /* ==== LIGHT THEME (deck palette) ==== */
-    :root {
-      --black: #EFEBE3; --black2: #E7E2D6; --black3: #FFFFFF;
-      --green: #33613F; --white: #1B1B18;
-      --muted: rgba(27, 27, 24, 0.66);
-      --line: rgba(27, 27, 24, 0.10);
-    }
-    .logo-sc { color: rgba(27, 27, 24, 0.8); }
-    .back { color: rgba(27, 27, 24, 0.5); }
-    .policy-label { color: rgba(27, 27, 24, 0.45); }
-    .policy-date { color: rgba(27, 27, 24, 0.45); }
-    .foot-wordmark .wm-italic { color: rgba(27, 27, 24, 0.72); }
-    .foot-tagline { color: rgba(27, 27, 24, 0.45); }
-    .foot-links a { color: rgba(27, 27, 24, 0.55); }
-    .foot-links a:hover { color: rgba(27, 27, 24, 0.85); }
-    .foot-copy { color: rgba(27, 27, 24, 0.4); }
-    .foot-disclaimer p { color: rgba(27, 27, 24, 0.45); }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy | Mayfair Sports Capital</title>
+<meta name="description" content="Privacy Policy of Mayfair Sports Capital Limited.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#04131B">
+<link rel="canonical" href="https://mayfairsportscapital.com/privacy/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mayfair Sports Capital">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Privacy Policy | Mayfair Sports Capital">
+<meta property="og:description" content="Privacy Policy of Mayfair Sports Capital Limited.">
+<meta property="og:url" content="https://mayfairsportscapital.com/privacy/">
+<meta property="og:image" content="https://mayfairsportscapital.com/assets/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/newsreader-opsz.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/figtree-wght.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css?v=de91362e">
+<script>document.documentElement.className='js';setTimeout(function(){if(!window.__msc)document.documentElement.className+=' js-failed'},6000);</script>
 </head>
-<body>
-  <nav>
-    <a href="/" class="logo"><span class="logo-mayfair">MAYFAIR</span><span class="logo-sc">&nbsp;Sports Capital</span></a>
-    <a href="/" class="back">&larr; Back to site</a>
-  </nav>
+<body class="page-legal" data-mode="prod" data-ga="G-899X453727">
+<a class="skip" href="#main">Skip to content</a>
 
-  <div class="policy">
-    <div class="policy-label">Legal</div>
-    <h1>Privacy <em>Policy</em></h1>
-    <div class="policy-date">Effective date: 24 March 2026</div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="msc-wordmark" viewBox="0 0 2701 220"><path fill="#3d6b4a" d="M8 180V96H26L52 150L79 96H96V180H82V121L58 168H47L23 121V180Z"/><path fill="#3d6b4a" d="M144 180 174 96H191L221 180H206L182 113L159 180ZM157 160 161 149H203L207 160Z"/><path fill="#3d6b4a" d="M290 180V150L262 96H278L299 139H296L316 96H333L305 150V180Z"/><path fill="#3d6b4a" d="M379 180V96H433V108H393V132H425V144H393V180Z"/><path fill="#3d6b4a" d="M475 180 506 96H522L553 180H538L514 113L490 180ZM489 160 493 149H534L538 160Z"/><path fill="#3d6b4a" d="M600 180V96H615V180Z"/><path fill="#3d6b4a" d="M668 180V96H698Q708 96 714 99Q721 103 724 109Q727 114 727 121Q727 128 724 134Q721 140 714 143Q708 147 698 147H682V180ZM712 180 694 143H710L728 180ZM682 136H697Q705 136 709 132Q713 128 713 122Q713 116 709 112Q705 108 697 108H682Z"/><path fill="currentColor" d="M931 52 934 44H940L932 80H926Q925 63 920 56Q914 49 903 49Q892 49 885 55Q878 61 878 70Q878 76 881 81Q885 86 890 91Q896 95 902 100Q908 104 914 110Q920 115 923 122Q927 129 927 138Q927 150 921 160Q914 170 904 176Q894 182 881 182Q871 182 863 178Q854 174 847 166L843 180H837L844 134H850Q851 153 859 163Q867 172 881 172Q890 172 896 169Q903 166 907 160Q911 154 911 147Q911 140 907 134Q903 128 898 123Q892 118 885 113Q879 109 873 103Q867 98 864 92Q860 85 860 77Q860 67 866 58Q871 50 881 45Q891 40 902 40Q911 40 918 42Q924 45 931 52Z"/><path fill="currentColor" d="M953 180 955 173Q960 173 965 171Q969 168 972 164Q975 159 977 151L998 72Q1000 68 1000 64Q1001 61 1001 58Q1001 53 997 51Q993 49 982 49L984 41H1034Q1057 41 1070 50Q1083 58 1083 72Q1083 82 1078 90Q1073 98 1065 103Q1056 109 1044 112Q1032 116 1018 116H1005L998 143Q996 149 995 154Q994 159 994 161Q994 165 996 167Q998 170 1003 171Q1008 172 1014 172L1012 180ZM1008 106H1016Q1027 106 1035 104Q1044 101 1050 96Q1056 92 1060 85Q1063 79 1063 71Q1063 64 1060 59Q1057 54 1050 52Q1044 50 1034 50Q1027 50 1024 52Q1021 55 1019 64Z"/><path fill="currentColor" d="M1181 40Q1196 40 1208 46Q1219 53 1225 66Q1231 78 1231 96Q1231 113 1225 128Q1219 144 1208 156Q1197 168 1184 175Q1170 182 1154 182Q1139 182 1128 175Q1116 168 1110 155Q1103 142 1103 125Q1103 108 1110 93Q1116 77 1127 65Q1138 53 1152 46Q1166 40 1181 40ZM1181 49Q1169 49 1159 55Q1149 61 1141 71Q1134 82 1130 96Q1125 110 1125 126Q1125 149 1133 160Q1141 172 1157 172Q1168 172 1178 166Q1187 160 1194 149Q1202 138 1206 123Q1210 108 1210 91Q1210 69 1203 59Q1196 49 1181 49Z"/><path fill="currentColor" d="M1249 180 1251 173Q1257 173 1261 171Q1265 168 1269 164Q1272 159 1274 151L1295 72Q1296 68 1297 64Q1297 61 1297 58Q1297 53 1293 51Q1289 49 1278 49L1280 41H1330Q1352 41 1364 50Q1377 58 1377 72Q1377 82 1372 90Q1367 98 1358 103Q1349 108 1337 110L1351 143Q1356 156 1360 162Q1364 168 1368 171Q1373 173 1381 173L1379 180H1345L1318 112H1303L1294 143Q1292 149 1291 154Q1290 159 1290 161Q1290 166 1295 169Q1301 172 1311 172L1309 180ZM1305 103H1314Q1326 103 1336 100Q1346 96 1351 89Q1357 82 1357 71Q1357 60 1350 55Q1344 50 1331 50Q1326 50 1323 51Q1320 52 1319 55Q1317 58 1315 64Z"/><path fill="currentColor" d="M1430 180 1432 173Q1439 173 1444 171Q1449 170 1452 165Q1456 161 1458 152L1480 69Q1482 63 1482 59Q1482 52 1479 51Q1476 49 1471 49Q1461 49 1452 53Q1444 57 1437 64Q1430 71 1425 80H1418L1435 41H1555L1552 80H1545Q1545 68 1542 61Q1539 55 1534 52Q1528 49 1520 49Q1514 49 1510 51Q1506 52 1503 57Q1501 62 1498 70L1477 150Q1476 154 1475 157Q1474 160 1474 163Q1474 168 1479 170Q1483 173 1495 173L1493 180Z"/><path fill="currentColor" d="M1656 52 1659 44H1665L1657 80H1651Q1650 63 1645 56Q1640 49 1628 49Q1617 49 1610 55Q1603 61 1603 70Q1603 76 1606 81Q1610 86 1615 91Q1621 95 1627 100Q1633 104 1639 110Q1645 115 1648 122Q1652 129 1652 138Q1652 150 1646 160Q1640 170 1629 176Q1619 182 1606 182Q1596 182 1588 178Q1579 174 1572 166L1568 180H1562L1569 134H1575Q1576 153 1584 163Q1592 172 1606 172Q1615 172 1622 169Q1628 166 1632 160Q1636 154 1636 147Q1636 140 1632 134Q1628 128 1623 123Q1617 118 1610 113Q1604 109 1598 103Q1592 98 1589 92Q1585 85 1585 77Q1585 67 1591 58Q1596 50 1606 45Q1616 40 1627 40Q1636 40 1643 42Q1649 45 1656 52Z"/><path fill="currentColor" d="M1864 146Q1855 159 1846 167Q1838 175 1828 178Q1818 182 1806 182Q1791 182 1780 175Q1769 168 1764 156Q1758 143 1758 126Q1758 112 1762 99Q1766 87 1773 76Q1781 65 1791 57Q1800 49 1812 44Q1823 40 1836 40Q1852 40 1867 50L1873 41H1880L1872 87H1865Q1864 67 1857 58Q1850 49 1836 49Q1824 49 1814 55Q1804 61 1796 71Q1788 82 1784 96Q1780 110 1780 126Q1780 171 1811 171Q1825 171 1836 164Q1847 157 1858 142Z"/><path fill="currentColor" d="M2014 40 1989 150Q1987 159 1987 164Q1987 169 1991 171Q1994 173 2004 173L2002 180H1949L1951 173Q1958 173 1961 171Q1965 170 1968 165Q1970 160 1972 150L1977 128H1938L1927 140Q1919 149 1914 154Q1910 159 1908 162Q1906 165 1906 168Q1906 170 1909 172Q1912 173 1919 173L1917 180H1871L1872 173Q1878 173 1884 170Q1890 166 1898 159Q1905 152 1916 138L1999 40ZM1946 119H1978L1993 63H1993Z"/><path fill="currentColor" d="M2039 180 2041 173Q2047 173 2051 171Q2055 168 2058 164Q2061 159 2063 151L2084 72Q2086 68 2086 64Q2087 61 2087 58Q2087 53 2083 51Q2079 49 2068 49L2070 41H2120Q2143 41 2156 50Q2169 58 2169 72Q2169 82 2164 90Q2160 98 2151 103Q2142 109 2130 112Q2118 116 2104 116H2091L2084 143Q2082 149 2081 154Q2080 159 2080 161Q2080 165 2082 167Q2084 170 2089 171Q2094 172 2101 172L2099 180ZM2094 106H2102Q2113 106 2121 104Q2130 101 2136 96Q2142 92 2146 85Q2149 79 2149 71Q2149 64 2146 59Q2143 54 2136 52Q2130 50 2120 50Q2113 50 2110 52Q2107 55 2105 64Z"/><path fill="currentColor" d="M2236 78 2217 150Q2214 158 2214 162Q2214 168 2218 171Q2222 173 2231 173L2229 180H2171L2173 173Q2180 173 2185 171Q2189 170 2192 165Q2195 160 2198 152L2219 72Q2221 62 2221 57Q2221 52 2217 50Q2213 49 2203 49L2205 41H2264L2262 49Q2254 49 2249 51Q2245 53 2242 59Q2239 66 2236 78Z"/><path fill="currentColor" d="M2293 180 2295 173Q2302 173 2307 171Q2311 170 2315 165Q2318 161 2321 152L2343 69Q2344 63 2344 59Q2344 52 2341 51Q2338 49 2333 49Q2323 49 2315 53Q2306 57 2299 64Q2292 71 2288 80H2280L2297 41H2418L2414 80H2407Q2407 68 2404 61Q2401 55 2396 52Q2390 49 2382 49Q2376 49 2372 51Q2368 52 2366 57Q2363 62 2361 70L2340 150Q2338 154 2338 157Q2337 160 2337 163Q2337 168 2341 170Q2346 173 2357 173L2355 180Z"/><path fill="currentColor" d="M2545 40 2520 150Q2518 159 2518 164Q2518 169 2522 171Q2525 173 2535 173L2533 180H2480L2482 173Q2489 173 2492 171Q2496 170 2499 165Q2501 160 2503 150L2508 128H2469L2458 140Q2450 149 2445 154Q2441 159 2439 162Q2437 165 2437 168Q2437 170 2440 172Q2443 173 2450 173L2448 180H2402L2403 173Q2409 173 2415 170Q2421 166 2429 159Q2436 152 2447 138L2530 40ZM2477 119H2509L2524 63H2524Z"/><path fill="currentColor" d="M2568 180 2570 173Q2578 173 2583 171Q2587 169 2590 165Q2592 160 2594 152L2615 72Q2616 67 2617 63Q2617 60 2617 57Q2617 52 2613 50Q2609 49 2600 49L2602 41H2660L2658 49Q2650 49 2646 51Q2641 53 2638 59Q2635 66 2632 78L2613 149Q2612 152 2612 155Q2611 157 2611 159Q2611 166 2616 169Q2620 172 2632 172Q2646 172 2655 169Q2665 166 2671 158Q2677 151 2682 138H2691L2675 180Z"/></symbol></svg>
+<header class="site-header" data-inertable>
+  <div class="site-header__inner">
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" data-menu-open>
+      <svg class="icon icon--menu" width="20" height="14" viewBox="0 0 20 14" aria-hidden="true" focusable="false"><path d="M0 1h20M0 7h20M0 13h20" stroke="currentColor" stroke-width="1.6" fill="none"/></svg><span class="menu-btn__label">Menu</span>
+    </button>
+    <a class="wordmark" href="/" aria-label="Mayfair Sports Capital, home"><svg class="wordmark__svg" viewBox="0 0 2701 220" aria-hidden="true" focusable="false"><use href="#msc-wordmark"/></svg></a>
+    <nav class="topnav" aria-label="Main">
+      <a href="/investors/">For investors</a>
+      <a href="/owners/">For sports owners</a>
+      <a href="/data/">Data-led</a>
+      <a href="/people/">Team</a>
+      <a href="/insights/">Insights</a>
+    </nav>
+    <a class="btn btn--light btn--sm site-header__cta" href="/contact/">Speak to a partner</a>
+  </div>
+</header>
 
-    <h2>1. Who we are</h2>
+<div class="scrim" data-menu-close aria-hidden="true"></div>
+<aside id="menu" class="drawer" role="dialog" aria-modal="true" aria-label="Menu" aria-hidden="true">
+  <div class="drawer__top">
+    <button class="drawer__close" type="button" aria-label="Close menu" data-menu-close><svg class="icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M1.5 1.5l13 13M14.5 1.5l-13 13" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></button>
+  </div>
+  <div class="drawer__body">
+    <nav class="drawer__nav drawer__nav--root" aria-label="Menu">
+      <ul>
+        <li style="--i: 0">
+          <a class="drawer__item" href="/investors/">For investors</a>
+        </li>
+        <li style="--i: 1">
+          <a class="drawer__item" href="/owners/">For sports owners</a>
+        </li>
+        <li style="--i: 2">
+          <a class="drawer__item" href="/data/">Data-led</a>
+        </li>
+        <li style="--i: 3">
+          <a class="drawer__item" href="/people/">Team</a>
+        </li>
+        <li style="--i: 4">
+          <a class="drawer__item" href="/insights/">Insights</a>
+        </li>
+        <li style="--i: 5">
+          <a class="drawer__item" href="/contact/">Speak to a partner</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="drawer__foot">
+    <a class="btn btn--outline" href="/contact/">Speak to a partner</a>
+  </div>
+</aside>
+<main id="main" data-inertable>
+
+<section class="hero hero--page hero--plain" aria-labelledby="page-title">
+  <div class="wrap hero__inner">
+    <h1 class="h-display h1 h1--page" id="page-title">Privacy Policy</h1>
+    <p class="hero__lede">Effective date: 8 November 2026</p>
+  </div>
+</section>
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="prose prose--legal">
+          <h2>1. Who we are</h2>
     <p>Mayfair Sports Capital Limited (“we”, “us”, “our”) is a company registered in England and Wales (company number 17114469). We are committed to protecting the privacy and security of your personal information.</p>
 
     <h2>2. Information we collect</h2>
@@ -92,7 +99,7 @@
     <ul>
       <li>Name, email address, telephone number and company name (via our contact form or direct correspondence)</li>
       <li>Technical data such as IP address, browser type and operating system (collected automatically when you visit our website)</li>
-      <li>Usage data including pages visited and time spent on site</li>
+      <li>Usage data including pages visited and time spent on site, collected through Google Analytics only if you accept analytics cookies</li>
       <li>Any additional information you choose to provide in messages or meetings</li>
     </ul>
 
@@ -109,13 +116,13 @@
     <p>Under the UK General Data Protection Regulation (UK GDPR), we rely on the following lawful bases: your consent, performance of a contract or steps taken at your request, our legitimate interests in operating our business and improving our services, and compliance with legal obligations.</p>
 
     <h2>5. Data sharing</h2>
-    <p>We do not sell your personal data. We may share information with trusted service providers who assist us in operating our website and conducting our business (for example, our website hosting provider and CRM platform), provided they agree to keep your information confidential. We may also disclose data where required by law.</p>
+    <p>We do not sell your personal data. We may share information with trusted service providers who assist us in operating our website and conducting our business (for example, our website hosting provider, our CRM platform HubSpot and, if you accept analytics cookies, Google Analytics), provided they agree to keep your information confidential. We may also disclose data where required by law.</p>
 
     <h2>6. Data retention</h2>
     <p>We retain your personal data only for as long as necessary to fulfil the purposes for which it was collected, or as required by law. Contact form submissions are retained for up to 24 months unless you request earlier deletion.</p>
 
     <h2>7. International transfers</h2>
-    <p>Some of our service providers may process data outside the United Kingdom. Where this occurs, we ensure appropriate safeguards are in place in accordance with UK data protection law.</p>
+    <p>Some of our service providers, including Google for analytics, may process data outside the United Kingdom. Where this occurs, we ensure appropriate safeguards are in place in accordance with UK data protection law.</p>
 
     <h2>8. Your rights</h2>
     <p>Under UK GDPR, you have the right to:</p>
@@ -137,27 +144,59 @@
 
     <h2>11. Contact us</h2>
     <p>If you have any questions about this privacy policy or wish to exercise your data rights, please contact us at:</p>
-    <p>Mayfair Sports Capital Limited<br>London, United Kingdom<br><a href="/contact/">Contact form</a></p>
+    <p>Mayfair Sports Capital Limited<br>London, United Kingdom<br><a href="mailto:hello@mayfairsportscapital.com">hello@mayfairsportscapital.com</a><br>or use our <a href="/contact/">contact form</a></p>
 
     <p>You also have the right to lodge a complaint with the Information Commissioner’s Office (ICO) at <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a>.</p>
-  </div>
-
-  <footer>
-    <div class="foot-brand">
-      <div class="foot-wordmark">
-        <span class="wm-main">MAYFAIR</span> <span class="wm-italic">Sports Capital</span>
-      </div>
-      <div class="foot-rule"></div>
-      <div class="foot-tagline">Capital meets sport.</div>
-      <div class="foot-links">
-        <a href="/privacy/">Privacy Policy</a>
-        <a href="/cookies/">Cookie Policy</a>
-      </div>
     </div>
-    <div class="foot-copy">&copy; 2026 Mayfair Sports Capital Ltd.</div>
-  </footer>
-  <div class="foot-disclaimer">
-    <p>Mayfair Sports Capital Limited is not authorised or regulated by the Financial Conduct Authority (FCA) or any other regulatory body. Nothing on this website constitutes financial, investment, legal, or tax advice, nor should it be construed as an offer, solicitation, or recommendation to buy or sell any financial instrument or investment product. All information is provided for general informational purposes only. Mayfair Sports Capital Limited accepts no liability for any loss or damage arising from reliance on information contained on this website. Mayfair Sports Capital Limited is registered in England and Wales. Company registration number: 17114469.</p>
   </div>
+</section>
+
+</main>
+
+<footer class="site-footer" data-inertable>
+  <div class="wrap">
+    <div class="site-footer__main">
+      <div class="site-footer__brand">
+        <a class="wordmark wordmark--footer" href="/" aria-label="Mayfair Sports Capital, home"><svg class="wordmark__svg" viewBox="0 0 2701 220" aria-hidden="true" focusable="false"><use href="#msc-wordmark"/></svg></a>
+        <p class="site-footer__tag">Capital meets sport.</p>
+      </div>
+      <nav class="site-footer__cols" aria-label="Footer">
+        <ul>
+          <li><a href="/investors/">For investors</a></li>
+          <li><a href="/owners/">For sports owners</a></li>
+          <li><a href="/data/">Data-led</a></li>
+        </ul>
+        <ul>
+          <li><a href="/people/">Team</a></li>
+          <li><a href="/insights/">Insights</a></li>
+        </ul>
+        <ul>
+          <li><a href="/contact/">Speak to a partner</a></li>
+        </ul>
+      </nav>
+    </div>
+    <ul class="site-footer__legal">
+      <li><a href="/privacy/">Privacy Policy</a></li>
+      <li><a href="/cookies/">Cookie Policy</a></li>
+      <li><button type="button" data-consent-open>Cookie settings</button></li>
+    </ul>
+    <div class="site-footer__small">
+      <p>Mayfair Sports Capital Limited is not authorised or regulated by the Financial Conduct Authority (FCA) or any other regulatory body. Nothing on this website constitutes financial, investment, legal, or tax advice, nor should it be construed as an offer, solicitation, or recommendation to buy or sell any financial instrument or investment product. All information is provided for general informational purposes only. Mayfair Sports Capital Limited accepts no liability for any loss or damage arising from reliance on information contained on this website. Mayfair Sports Capital Limited is registered in England and Wales. Company registration number: 17114469.</p>
+    </div>
+    <div class="site-footer__base">
+      <p>&copy; 2026 Mayfair Sports Capital Ltd.</p>
+      <p>London, United Kingdom</p>
+    </div>
+  </div>
+</footer>
+<div class="consent" id="consent" role="region" aria-label="Cookie preferences" hidden>
+  <p class="consent__text" id="consent-text">We would like to use Google Analytics cookies to understand how this site is used. They are set only if you accept. See our <a href="/cookies/">Cookie Policy</a>.</p>
+  <div class="consent__actions">
+    <button type="button" class="btn btn--outline btn--sm" data-consent="denied">Decline</button>
+    <button type="button" class="btn btn--outline btn--sm" data-consent="granted">Accept</button>
+  </div>
+</div>
+<script src="/assets/js/site.js?v=de91362e" defer></script>
+<script type="speculationrules">{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"selector_matches":"[rel~=nofollow]"}}]},"eagerness":"moderate"}]}</script>
 </body>
 </html>
